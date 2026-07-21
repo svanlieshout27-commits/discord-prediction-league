@@ -104,7 +104,11 @@ for(const rd of cfg.rounds){
 
     if(iBanker>=0){
       const bval=(row[iBanker]||"").trim();
-      const bi=fixtures.findIndex(f=>`${f.home} v ${f.away}`===bval);
+      // match the banker choice to a fixture. Accepts "Home v Away", "Home - Away",
+      // or anything that starts with the (unique) home-team name.
+      let bi=fixtures.findIndex(f=>`${f.home} v ${f.away}`===bval);
+      if(bi<0 && bval) bi=fixtures.findIndex(f=>bval.startsWith(f.home));
+      if(bi<0 && bval) bi=fixtures.findIndex(f=>bval.toLowerCase().includes(f.home.toLowerCase()));
       if(bi>=0) p.bankers[rd.id]=bi;
     }
     if(iJoker>=0 && (row[iJoker]||"").trim().toLowerCase()==="yes"){
