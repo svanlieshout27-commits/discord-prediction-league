@@ -1,0 +1,6 @@
+{
+  "season": 2026,
+  "rounds": [
+    { "id": "GW1", "label": "Gameweek 1", "matchday": 1, "csvUrl": "PASTE_YOUR_PUBLISHED_CSV_LINK_HERE" }
+  ]
+}

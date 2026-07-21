@@ -1,0 +1,63 @@
+{
+  "lastUpdated": "Demo data",
+  "rounds": [
+    { "id": "GW1", "label": "Gameweek 1", "fixtures": [
+      { "home": "Man Utd", "away": "Man City", "hg": 1, "ag": 3, "played": true },
+      { "home": "Arsenal", "away": "Everton", "hg": 2, "ag": 0, "played": true },
+      { "home": "Chelsea", "away": "Brighton", "hg": 1, "ag": 1, "played": true },
+      { "home": "Tottenham", "away": "Newcastle", "hg": 0, "ag": 2, "played": true },
+      { "home": "Liverpool", "away": "Wolves", "hg": 3, "ag": 1, "played": true },
+      { "home": "West Ham", "away": "Fulham", "hg": 1, "ag": 1, "played": true }
+    ]},
+    { "id": "GW2", "label": "Gameweek 2", "fixtures": [
+      { "home": "Everton", "away": "Liverpool", "hg": 1, "ag": 2, "played": true },
+      { "home": "Brighton", "away": "Arsenal", "hg": 0, "ag": 0, "played": true },
+      { "home": "Newcastle", "away": "Chelsea", "hg": 2, "ag": 1, "played": true },
+      { "home": "Wolves", "away": "Man Utd", "hg": 1, "ag": 1, "played": true },
+      { "home": "Fulham", "away": "Tottenham", "hg": 2, "ag": 2, "played": true },
+      { "home": "Aston Villa", "away": "Man City", "hg": 0, "ag": 1, "played": true }
+    ]},
+    { "id": "GW3", "label": "Gameweek 3", "fixtures": [
+      { "home": "Man City", "away": "Arsenal", "hg": 3, "ag": 1, "played": true },
+      { "home": "Liverpool", "away": "Chelsea", "hg": 2, "ag": 2, "played": true },
+      { "home": "Newcastle", "away": "Everton", "hg": 1, "ag": 0, "played": true },
+      { "home": "Brighton", "away": "Tottenham", "hg": 0, "ag": 0, "played": true },
+      { "home": "Aston Villa", "away": "West Ham", "hg": 2, "ag": 1, "played": true },
+      { "home": "Man Utd", "away": "Fulham", "hg": 1, "ag": 1, "played": true }
+    ]}
+  ],
+  "predictions": [
+    { "name": "TheGaffer",
+      "bankers": { "GW1": 1, "GW2": 0, "GW3": 2 },
+      "jokers": ["GW2"],
+      "picks": {
+        "GW1": [{"hg":2,"ag":1},{"hg":1,"ag":0},{"hg":1,"ag":1},{"hg":1,"ag":1},{"hg":2,"ag":0},{"hg":1,"ag":1}],
+        "GW2": [{"hg":1,"ag":2},{"hg":0,"ag":1},{"hg":2,"ag":0},{"hg":1,"ag":1},{"hg":1,"ag":1},{"hg":0,"ag":2}],
+        "GW3": [{"hg":2,"ag":1},{"hg":1,"ag":1},{"hg":2,"ag":0},{"hg":1,"ag":1},{"hg":2,"ag":1},{"hg":1,"ag":0}]
+      }},
+    { "name": "ArmchairPundit",
+      "bankers": { "GW1": 1, "GW2": 4, "GW3": 0 },
+      "jokers": ["GW3"],
+      "picks": {
+        "GW1": [{"hg":1,"ag":2},{"hg":2,"ag":0},{"hg":2,"ag":1},{"hg":0,"ag":2},{"hg":2,"ag":1},{"hg":1,"ag":1}],
+        "GW2": [{"hg":0,"ag":2},{"hg":1,"ag":1},{"hg":1,"ag":0},{"hg":0,"ag":0},{"hg":2,"ag":2},{"hg":1,"ag":1}],
+        "GW3": [{"hg":3,"ag":1},{"hg":2,"ag":2},{"hg":1,"ag":0},{"hg":0,"ag":0},{"hg":2,"ag":1},{"hg":1,"ag":1}]
+      }},
+    { "name": "TopCorner",
+      "bankers": { "GW1": 1, "GW2": 2, "GW3": 0 },
+      "jokers": [],
+      "picks": {
+        "GW1": [{"hg":2,"ag":2},{"hg":3,"ag":0},{"hg":0,"ag":1},{"hg":1,"ag":1},{"hg":1,"ag":0},{"hg":2,"ag":1}],
+        "GW2": [{"hg":1,"ag":3},{"hg":0,"ag":0},{"hg":3,"ag":1},{"hg":2,"ag":0},{"hg":1,"ag":1},{"hg":0,"ag":1}],
+        "GW3": [{"hg":2,"ag":0},{"hg":1,"ag":1},{"hg":2,"ag":1},{"hg":1,"ag":0},{"hg":1,"ag":1},{"hg":0,"ag":2}]
+      }},
+    { "name": "PoolsPro",
+      "bankers": { "GW1": 1, "GW2": 0, "GW3": 2 },
+      "jokers": [],
+      "picks": {
+        "GW1": [{"hg":0,"ag":0},{"hg":3,"ag":1},{"hg":2,"ag":2},{"hg":2,"ag":1},{"hg":1,"ag":2},{"hg":0,"ag":0}],
+        "GW2": [{"hg":2,"ag":1},{"hg":1,"ag":2},{"hg":0,"ag":0},{"hg":1,"ag":0},{"hg":3,"ag":2},{"hg":1,"ag":1}],
+        "GW3": [{"hg":1,"ag":1},{"hg":0,"ag":1},{"hg":0,"ag":0},{"hg":1,"ag":2},{"hg":0,"ag":0},{"hg":2,"ag":2}]
+      }}
+  ]
+}
