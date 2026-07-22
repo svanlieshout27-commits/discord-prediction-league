@@ -1,6 +1,6 @@
 {
   "season": 2026,
   "rounds": [
-    { "id": "GW1", "label": "Gameweek 1", "matchday": 1, "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmRo36Yfp_6c4IsGOc5-5YarG3OYQKOghc30u2t5dW95afG9cQOpu_-x7WrHQ_x5QHBR2-G3RdA16g/pub?gid=1241693477&single=true&output=csv" }
+    { "id": "GW1", "label": "Gameweek 1", "matchday": 1, "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQsKB7NlIDm-tpyl61E2LgcqMvcEpunJxLqY75sYNkDD25fL2BgH2EVCmkzmC9WfhsOfiLrr-rnJS12/pub?gid=1620446581&single=true&output=csv" }
   ]
 }
