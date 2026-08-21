@@ -1,8 +1,9 @@
 name: Refresh leaderboard
 on:
   schedule:
-    - cron: "0 6 * * *"
-  workflow_dispatch:
+    - cron: "*/30 11-22 * * *"   # every 30 min, 11:00–22:59 UTC — live match-day scoring
+    - cron: "0 6 * * *"          # once overnight — final catch-up
+  workflow_dispatch:              # ...and lets you run it manually any time
 permissions:
   contents: write
 jobs:
