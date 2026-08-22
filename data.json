@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-22 17:45 UTC",
+  "lastUpdated": "2026-08-22 18:28 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -43,9 +43,9 @@
         {
           "home": "Brentford",
           "away": "Tottenham",
-          "hg": null,
-          "ag": null,
-          "played": false
+          "hg": 3,
+          "ag": 0,
+          "played": true
         },
         {
           "home": "Man City",
