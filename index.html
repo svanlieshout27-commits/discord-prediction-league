@@ -16,6 +16,7 @@
   body{margin:0;background:var(--bg);color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
 
+  /* top nav */
   .topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line)}
   .topbar .inner{max-width:960px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
@@ -25,6 +26,7 @@
   .navlinks a{color:var(--muted);text-decoration:none}
   .navlinks a:hover{color:var(--blue)}
 
+  /* hero */
   .hero{background:linear-gradient(135deg,var(--blue-deep),var(--blue) 60%,var(--blue-bright));color:#fff;
     border-bottom:4px solid var(--red)}
   .hero .inner{max-width:960px;margin:0 auto;padding:52px 20px 46px}
@@ -84,6 +86,25 @@
   .pill.res{background:#e7eefb;color:var(--blue);border:1px solid #d4e0f5}
   .fxpts{font-weight:800;text-align:right;min-width:34px}
   .fxpts.p1{color:var(--good)} .fxpts.p3{color:var(--exact)} .fxpts.p0{color:var(--muted)} .fxpts.pneg{color:var(--red)}
+  .feat{margin:8px 4px 2px;padding:8px 8px 4px;border:1px solid #f0e3b8;background:#fffdf3;border-radius:10px}
+  .feat-h{font-size:11.5px;font-weight:800;color:#8a6d00;text-transform:uppercase;letter-spacing:.03em;margin:0 2px 4px}
+  .feat-row .match{font-weight:600}
+
+  .upnote{padding:14px 20px 4px;color:var(--muted);font-size:13.5px}
+  .upnote b{color:#8a6d00}
+  .uplist{padding:10px 14px 16px;display:grid;gap:8px}
+  .uprow{display:flex;align-items:center;gap:12px;padding:11px 14px;border:1px solid var(--line);border-radius:12px;background:#fbfcfe}
+  .uprow.feat-on{border-color:#f0e3b8;background:#fffdf3}
+  .upgw{flex:0 0 auto;font-weight:800;font-size:12px;color:#fff;background:var(--blue);border-radius:8px;padding:4px 9px;letter-spacing:.02em}
+  .uprow.feat-on .upgw{background:#c99700}
+  .upmid{flex:1;min-width:0}
+  .upgame{font-weight:700;color:var(--ink);font-size:14.5px}
+  .uplabel{color:var(--muted);font-size:12px;margin-top:1px}
+  .upbadge{flex:0 0 auto;font-size:11px;font-weight:800;color:#8a6d00;background:#fff6d9;border:1px solid #f0e3b8;
+    border-radius:999px;padding:4px 10px;white-space:nowrap}
+  .uprow.tbd .upgame{color:var(--muted);font-weight:600}
+  .uprow.tbd .upbadge{color:var(--muted);background:#f1f3f7;border-color:var(--line)}
+  @media(max-width:520px){.upbadge{display:none}}
 
   .rules{padding:16px 20px;font-size:14.5px}
   .rules ul{margin:10px 0 0;padding-left:20px}
@@ -143,6 +164,12 @@
     <p style="padding:10px 20px 16px;margin:0;color:var(--muted);font-size:12.5px">Tap a player to see every pick, round by round.</p>
   </div>
 
+  <div class="card" id="upcoming">
+    <h2><span class="bar"></span> Coming Up — Featured Games</h2>
+    <div class="upnote">Marquee fixtures ahead. On these weeks the coupon adds the <b>⭐ first team to score</b> and <b>⭐ first goalscorer</b> bonus — <b>+5 each</b>.</div>
+    <div class="uplist" id="upcomingList"></div>
+  </div>
+
   <div class="card" id="howto">
     <h2><span class="bar"></span> How to Play</h2>
     <div class="rules">
@@ -165,7 +192,8 @@
         <li><b>+3</b> — <b>exact scoreline</b> (the outcome point plus a +2 bonus)</li>
         <li><b>0</b> — wrong outcome</li>
         <li>🏦 <b>Banker</b> — each week you nominate the one result you're most sure of. If you call that winner right, that match scores <b>double</b> (correct outcome banker = +2, exact-score banker = +6). Choose it wisely.</li>
-        <li>🃏 <b>Joker</b> — you get <b>2 Jokers for the whole season</b>. Play one on a gameweek to <b>double your entire coupon</b> that week — so save them for weeks you feel strong.</li>
+        <li>🃏 <b>Joker</b> — you get <b>4 Jokers for the whole season</b>. Play one on a gameweek to <b>double your entire coupon</b> that week — so save them for weeks you feel strong.</li>
+        <li>⭐ <b>Featured game</b> — on selected big-match weeks the coupon adds two bonus calls on one marquee fixture: <b>first team to score</b> and <b>first goalscorer</b>, worth <b>+5 each</b>. They ride your joker too, but the banker doesn't apply to them.</li>
       </ul>
       <div class="eg">Example: you predict <b>Man Utd 1–3 Man City</b> (an away win, “3”).
         Finishes 0–2 → still an away win → <b>+1</b>. Finishes exactly 1–3 → <b>+3</b>. Finishes 2–1 → wrong → <b>0</b>.</div>
@@ -197,515 +225,91 @@
 </footer>
 
 <script>
+/* ============================================================================
+   DATA — everything the leaderboard needs, in one block.
+   The weekly refresh (refresh.mjs) rewrites the JSON between the __DATA__ markers
+   using real football-data.org results + the predictions CSV. Left as-is, the demo runs.
+     rounds[].fixtures[] : { home, away, hg, ag, played }   (hg/ag = goals)
+     rounds[].featured  : "Home v Away" or null  (the week's marquee bonus game)
+     rounds[].featuredResult : { firstTeam, firstScorer }  (entered by hand after the game)
+     predictions[].picks[roundId] : [{hg,ag}, ...] in fixture order
+     predictions[].bonus[roundId] : { firstTeam, firstScorer }  (featured-game calls)
+     optional per player: bankers { GW1: 2 }, jokers [ "GW3" ]
+     player identity across weeks = pseudonym (players must reuse it)
+   ============================================================================ */
 const DATA = /*__DATA_START__*/{
-  "lastUpdated": "2026-08-23 13:31 UTC",
+  "lastUpdated": "—",
   "rounds": [
-    {
-      "id": "GW1",
-      "label": "Gameweek 1",
-      "fixtures": [
-        {
-          "home": "Arsenal",
-          "away": "Coventry City",
-          "hg": 3,
-          "ag": 0,
-          "played": true
-        },
-        {
-          "home": "Hull City",
-          "away": "Man United",
-          "hg": 2,
-          "ag": 0,
-          "played": true
-        },
-        {
-          "home": "Ipswich Town",
-          "away": "Sunderland",
-          "hg": 2,
-          "ag": 1,
-          "played": true
-        },
-        {
-          "home": "Nottingham",
-          "away": "Leeds United",
-          "hg": 0,
-          "ag": 1,
-          "played": true
-        },
-        {
-          "home": "Everton",
-          "away": "Crystal Palace",
-          "hg": 2,
-          "ag": 0,
-          "played": true
-        },
-        {
-          "home": "Brentford",
-          "away": "Tottenham",
-          "hg": 3,
-          "ag": 0,
-          "played": true
-        },
-        {
-          "home": "Man City",
-          "away": "Bournemouth",
-          "hg": null,
-          "ag": null,
-          "played": false
-        },
-        {
-          "home": "Brighton Hove",
-          "away": "Aston Villa",
-          "hg": null,
-          "ag": null,
-          "played": false
-        },
-        {
-          "home": "Newcastle",
-          "away": "Liverpool",
-          "hg": null,
-          "ag": null,
-          "played": false
-        },
-        {
-          "home": "Fulham",
-          "away": "Chelsea",
-          "hg": null,
-          "ag": null,
-          "played": false
-        }
-      ]
-    }
+    { "id": "GW1", "label": "Gameweek 1", "fixtures": [
+      { "home": "Arsenal", "away": "Coventry City", "hg": null, "ag": null, "played": false },
+      { "home": "Hull City", "away": "Man United", "hg": null, "ag": null, "played": false },
+      { "home": "Everton", "away": "Crystal Palace", "hg": null, "ag": null, "played": false },
+      { "home": "Ipswich Town", "away": "Sunderland", "hg": null, "ag": null, "played": false },
+      { "home": "Nottingham", "away": "Leeds United", "hg": null, "ag": null, "played": false },
+      { "home": "Brentford", "away": "Tottenham", "hg": null, "ag": null, "played": false },
+      { "home": "Brighton Hove", "away": "Aston Villa", "hg": null, "ag": null, "played": false },
+      { "home": "Man City", "away": "Bournemouth", "hg": null, "ag": null, "played": false },
+      { "home": "Newcastle", "away": "Liverpool", "hg": null, "ag": null, "played": false },
+      { "home": "Fulham", "away": "Chelsea", "hg": null, "ag": null, "played": false }
+    ]}
   ],
-  "predictions": [
-    {
-      "name": "Signori",
-      "bankers": {
-        "GW1": 0
-      },
-      "jokers": [],
-      "picks": {
-        "GW1": [
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 3
-          },
-          {
-            "hg": 2,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 2
-          },
-          {
-            "hg": 3,
-            "ag": 3
-          },
-          {
-            "hg": 3,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 4
-          },
-          {
-            "hg": 3,
-            "ag": 2
-          }
-        ]
-      }
-    },
-    {
-      "name": "Billywizz",
-      "bankers": {
-        "GW1": 0
-      },
-      "jokers": [],
-      "picks": {
-        "GW1": [
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 3
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 2
-          },
-          {
-            "hg": 0,
-            "ag": 1
-          },
-          {
-            "hg": 4,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 0,
-            "ag": 3
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          }
-        ]
-      }
-    },
-    {
-      "name": "Zandermc",
-      "bankers": {
-        "GW1": 6
-      },
-      "jokers": [],
-      "picks": {
-        "GW1": [
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 3
-          },
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 3
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          }
-        ]
-      }
-    },
-    {
-      "name": "Juice",
-      "bankers": {
-        "GW1": 6
-      },
-      "jokers": [
-        "GW1"
-      ],
-      "picks": {
-        "GW1": [
-          {
-            "hg": 3,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 2,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 3
-          },
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 2,
-            "ag": 3
-          },
-          {
-            "hg": 0,
-            "ag": 3
-          }
-        ]
-      }
-    },
-    {
-      "name": "Nature Boy",
-      "bankers": {
-        "GW1": 6
-      },
-      "jokers": [],
-      "picks": {
-        "GW1": [
-          {
-            "hg": 4,
-            "ag": 0
-          },
-          {
-            "hg": 2,
-            "ag": 3
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 2
-          },
-          {
-            "hg": 0,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 0
-          },
-          {
-            "hg": 3,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 3
-          },
-          {
-            "hg": 1,
-            "ag": 3
-          },
-          {
-            "hg": 1,
-            "ag": 4
-          }
-        ]
-      }
-    },
-    {
-      "name": "Dutch",
-      "bankers": {
-        "GW1": 0
-      },
-      "jokers": [],
-      "picks": {
-        "GW1": [
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 2,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          },
-          {
-            "hg": 3,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 3
-          }
-        ]
-      }
-    },
-    {
-      "name": "atcolin",
-      "bankers": {
-        "GW1": 1
-      },
-      "jokers": [
-        "GW1"
-      ],
-      "picks": {
-        "GW1": [
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 3
-          }
-        ]
-      }
-    },
-    {
-      "name": "An",
-      "bankers": {
-        "GW1": 0
-      },
-      "jokers": [],
-      "picks": {
-        "GW1": [
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          },
-          {
-            "hg": 0,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 4,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          }
-        ]
-      }
-    }
-  ]
+  "predictions": []
 }/*__DATA_END__*/;
 
 const ROUNDS = DATA.rounds;
 const PREDICTIONS = DATA.predictions;
 const LAST_UPDATED = DATA.lastUpdated;
 
+/* ============================================================================
+   COMING UP — the marquee game for upcoming weeks (edit freely).
+   feat:true  -> featured week (first team + first goalscorer bonus in play)
+   feat:false -> no big-six clash that week; pick one or leave the bonus off
+   Remove a row once that week has been played.
+   ============================================================================ */
+const UPCOMING = [
+  { gw:"GW2",  game:"Tottenham v Newcastle",   feat:true  },
+  { gw:"GW3",  game:"Arsenal v Chelsea",        feat:true  },
+  { gw:"GW4",  game:"Man United v Man City",    feat:true  },
+  { gw:"GW5",  game:"No marquee clash — TBC",   feat:false },
+  { gw:"GW6",  game:"Liverpool v Man City",     feat:true  },
+  { gw:"GW7",  game:"No marquee clash — TBC",   feat:false },
+  { gw:"GW8",  game:"Chelsea v Tottenham",      feat:true  },
+  { gw:"GW9",  game:"Liverpool v Arsenal",      feat:true  },
+  { gw:"GW10", game:"No marquee clash — TBC",   feat:false }
+];
+
+/* ============================================================================
+   SCORING RULES — tweak the competition here (no other code changes needed)
+   ============================================================================ */
 const RULES = {
-  exactScore:       3,
-  correctOutcome:   1,
-  wrongOutcome:     0,
-  bankerMultiplier: 2,
-  jokerMultiplier:  2,
-  maxJokers:        2,
+  exactScore:       3,   // nailed the exact scoreline
+  correctOutcome:   1,   // right result (1 / X / 3) but wrong score
+  wrongOutcome:     0,   // a wrong outcome simply scores nothing
+  bankerMultiplier: 2,   // a player's nominated banker pick counts this many times
+  jokerMultiplier:  2,   // a played joker multiplies that whole gameweek by this
+  maxJokers:        4,   // only the first N jokers a player plays all season count
+  firstTeamToScore: 5,   // featured game: correctly call the first team to score
+  firstGoalscorer:  5,   // featured game: correctly call the first goalscorer
 };
 
+/* tolerant text matching for the featured-game bonuses */
+function normStr(s){
+  return String(s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+    .replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim();
+}
+function scorerMatch(pred, actual){
+  const a=normStr(actual), b=normStr(pred);
+  if(!a||!b) return false;
+  if(a===b) return true;                       // exact (normalised)
+  const as=a.split(" "), bs=b.split(" ");
+  if(as[as.length-1] && as[as.length-1]===bs[bs.length-1]) return true; // same surname
+  if(a.includes(b)||b.includes(a)) return true; // one contains the other
+  return false;
+}
+
+/* ============================================================================
+   SCORING ENGINE
+   ============================================================================ */
 function outcome(hg, ag){ return hg>ag ? "1" : (hg<ag ? "3" : "X"); }
 
 function scoreFixture(pred, fx){
@@ -719,6 +323,7 @@ function scoreFixture(pred, fx){
 function scorePlayer(p){
   let total=0, exact=0, outc=0;
   const rounds=[];
+  // enforce the joker limit: only the first (RULES.maxJokers) jokers a player plays, in gameweek order, count
   const usedJokers = ROUNDS.map(r=>r.id).filter(id=> p.jokers && p.jokers.indexOf(id)>=0).slice(0, RULES.maxJokers);
   ROUNDS.forEach(r=>{
     const preds = p.picks[r.id] || [];
@@ -733,13 +338,34 @@ function scorePlayer(p){
       if(s.exact){ exact++; } else if(s.correctOutcome){ outc++; }
       lines.push({ fx, pred:preds[i], s, isBanker, pts });
     });
+
+    // ---- featured-game bonuses (first team to score / first goalscorer) ----
+    let bonusLines = null;
+    if(r.featured){
+      const fr = r.featuredResult || {};                 // correct answers (entered by hand)
+      const resolved = !!(fr.firstTeam || fr.firstScorer); // has the result been entered yet?
+      const myb = p.bonus ? p.bonus[r.id] : undefined;
+      const myTeam   = myb ? (myb.firstTeam||"")   : "";
+      const myScorer = myb ? (myb.firstScorer||"") : "";
+      const teamOk   = resolved && fr.firstTeam   && normStr(myTeam)===normStr(fr.firstTeam);
+      const scorerOk = resolved && fr.firstScorer && scorerMatch(myScorer, fr.firstScorer);
+      const teamPts   = teamOk   ? RULES.firstTeamToScore : 0;
+      const scorerPts = scorerOk ? RULES.firstGoalscorer  : 0;
+      sub += teamPts + scorerPts;                          // in the coupon, so joker doubles it too
+      bonusLines = [
+        { label:"First team to score", pred:myTeam,   res:fr.firstTeam||"",   ok:teamOk,   pts:teamPts,   resolved },
+        { label:"First goalscorer",    pred:myScorer, res:fr.firstScorer||"", ok:scorerOk, pts:scorerPts, resolved }
+      ];
+    }
+
     if(jokerOn) sub *= RULES.jokerMultiplier;
     total += sub;
-    rounds.push({ label:r.label, sub, lines, jokerOn });
+    rounds.push({ label:r.label, sub, lines, jokerOn, featured:r.featured||null, bonusLines });
   });
   return { total, exact, outc, rounds };
 }
 
+/* ---------- render ---------- */
 const scored = PREDICTIONS.map(p=>({ name:p.name, ...scorePlayer(p) }))
   .sort((a,b)=> b.total-a.total || b.exact-a.exact);
 
@@ -766,7 +392,18 @@ scored.forEach((p,i)=>{
           <span class="pill pred" title="prediction">${predTxt}</span>
           <span class="pill res" title="result">${resTxt}</span>
           <span class="fxpts ${cls}">${sign}${l.pts}</span></div>`;
-      }).join("")+`</div>`).join("")+
+      }).join("")+
+      (r.bonusLines?`<div class="feat"><div class="feat-h">⭐ Featured: ${esc(r.featured)} · bonus +5 / +5</div>`+
+        r.bonusLines.map(b=>{
+          const shown = b.resolved ? (b.res||"—") : "pending";
+          const cls = !b.resolved ? "p0" : (b.ok ? "p1" : "pneg");
+          return `<div class="fx feat-row">
+            <span class="match">${esc(b.label)}</span>
+            <span class="pill pred" title="your call">${esc(b.pred||"—")}</span>
+            <span class="pill res" title="actual">${esc(shown)}</span>
+            <span class="fxpts ${cls}">${b.resolved?"+"+b.pts:"·"}</span></div>`;
+        }).join("")+`</div>`:"")+
+      `</div>`).join("")+
     `</div></td>`;
   tr.addEventListener("click",()=>{
     const open=detail.style.display==="none";
@@ -776,15 +413,39 @@ scored.forEach((p,i)=>{
   body.appendChild(tr); body.appendChild(detail);
 });
 
+/* empty state when nobody has entered yet */
 if(scored.length===0){
   const tr=document.createElement("tr");
   tr.innerHTML=`<td colspan="5" style="text-align:center;color:var(--muted);padding:26px 16px">No entries yet — be the first when the Gameweek 1 form opens. ⚽</td>`;
   body.appendChild(tr);
 }
 
+/* coming-up featured games */
+const upList=document.getElementById("upcomingList");
+if(upList){
+  if(UPCOMING.length===0){
+    upList.innerHTML=`<div class="uprow tbd"><span class="upmid"><span class="upgame">Featured games will appear here.</span></span></div>`;
+  } else {
+    UPCOMING.forEach(u=>{
+      const row=document.createElement("div");
+      row.className="uprow"+(u.feat?" feat-on":" tbd");
+      row.innerHTML=`
+        <span class="upgw">${esc(u.gw)}</span>
+        <span class="upmid">
+          <span class="upgame">${u.feat?'⭐ ':''}${esc(u.game)}</span>
+          <span class="uplabel">Game of the Week</span>
+        </span>
+        <span class="upbadge">${u.feat?'First team + scorer · +5/+5':'bonus off'}</span>`;
+      upList.appendChild(row);
+    });
+  }
+}
+
+/* hero chips + updated + intro note */
 const chips=document.getElementById("chips");
 ROUNDS.forEach(r=>{ const s=document.createElement("span"); s.className="chip"; s.textContent=r.label; chips.appendChild(s); });
 document.getElementById("updated").textContent="Results last refreshed: "+LAST_UPDATED;
+/* hide the intro banner once real players have entered */
 if(PREDICTIONS.length>0){ const d=document.getElementById("demoNote"); if(d) d.style.display="none"; }
 
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
