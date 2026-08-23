@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23 14:49 UTC",
+  "lastUpdated": "2026-08-23 15:20 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -50,16 +50,16 @@
         {
           "home": "Man City",
           "away": "Bournemouth",
-          "hg": null,
-          "ag": null,
-          "played": false
+          "hg": 2,
+          "ag": 1,
+          "played": true
         },
         {
           "home": "Brighton Hove",
           "away": "Aston Villa",
-          "hg": null,
-          "ag": null,
-          "played": false
+          "hg": 4,
+          "ag": 0,
+          "played": true
         },
         {
           "home": "Newcastle",
