@@ -5,8 +5,14 @@
   For each round in config.json it:
     1. fetches that matchday's fixtures + results from football-data.org
     2. fetches the round's published Google Form CSV of predictions
-    3. parses predictions (scores per match, banker, joker) keyed by pseudonym
+    3. parses predictions (scores per match, banker, joker, featured-game bonuses)
     4. assembles data.json and injects it into index.html (via the DATA markers)
+
+  FEATURED GAME (optional, per round in config.json):
+    "featured": "Man Utd v Man City"        -> the marquee fixture that week
+    "featuredResult": { "firstTeam": "", "firstScorer": "" }
+        -> you fill these in by hand AFTER the game (free API has no scorer data).
+           Leave blank until played; the bonuses score once you enter them.
 
   Needs the token in env:  FOOTBALL_DATA_TOKEN
   Run:  FOOTBALL_DATA_TOKEN=xxx node refresh.mjs
@@ -69,14 +75,33 @@ const BANKER_COL = "BANKER — which match are you most confident about? (it sco
 const JOKER_COL  = "Play your JOKER this week? (doubles your WHOLE coupon — limited uses per season)";
 
 function colIndex(header, name){ return header.findIndex(h=>h.trim()===name); }
+// bonus columns are matched loosely by their opening words, so the fixture name
+// in the question title (which changes each week) doesn't have to match exactly.
+function colStartsWith(header, prefix){
+  const p=prefix.toLowerCase();
+  return header.findIndex(h=>h.trim().toLowerCase().startsWith(p));
+}
+// resolve the config "featured" string to a real "Home v Away" from the fixtures
+function resolveFeatured(str, fixtures){
+  const s=(str||"").trim(); if(!s) return null;
+  let f=fixtures.find(f=>`${f.home} v ${f.away}`===s);
+  if(!f) f=fixtures.find(f=>s.toLowerCase().startsWith(f.home.toLowerCase()));
+  if(!f) f=fixtures.find(f=>s.toLowerCase().includes(f.home.toLowerCase()));
+  return f ? `${f.home} v ${f.away}` : s;
+}
 
 /* main */
-const players = new Map(); // pseudonym -> { name, bankers:{}, jokers:[], picks:{} }
+const players = new Map(); // pseudonym -> { name, bankers:{}, jokers:[], picks:{}, bonus:{} }
 const rounds = [];
 
 for(const rd of cfg.rounds){
   const fixtures = await fetchFixtures(rd.matchday);
-  rounds.push({ id:rd.id, label:rd.label, fixtures });
+  const featured = rd.featured ? resolveFeatured(rd.featured, fixtures) : null;
+  rounds.push({
+    id:rd.id, label:rd.label, fixtures,
+    featured,
+    featuredResult: rd.featuredResult || null
+  });
 
   const csv = await fetchCSV(rd.csvUrl);
   if(!csv || csv.length<2) continue;              // no responses yet
@@ -84,6 +109,8 @@ for(const rd of cfg.rounds){
   const iPseudo = colIndex(header, PSEUDO_COL);
   const iBanker = colIndex(header, BANKER_COL);
   const iJoker  = colIndex(header, JOKER_COL);
+  const iFirstTeam   = colStartsWith(header, "first team to score");
+  const iFirstScorer = colStartsWith(header, "first goalscorer");
   // pre-find each fixture's two goal columns by exact title
   const cols = fixtures.map(f=>({
     h: colIndex(header, `${f.home} goals — (${f.home} v ${f.away})`),
@@ -95,7 +122,7 @@ for(const rd of cfg.rounds){
     const name=(row[iPseudo]||"").trim();
     if(!name) continue;
     const norm=name.toLowerCase();
-    if(!players.has(norm)) players.set(norm,{ name, bankers:{}, jokers:[], picks:{} });
+    if(!players.has(norm)) players.set(norm,{ name, bankers:{}, jokers:[], picks:{}, bonus:{} });
     const p=players.get(norm);
     p.name=name; // keep latest casing
 
@@ -104,8 +131,6 @@ for(const rd of cfg.rounds){
 
     if(iBanker>=0){
       const bval=(row[iBanker]||"").trim();
-      // match the banker choice to a fixture. Accepts "Home v Away", "Home - Away",
-      // or anything that starts with the (unique) home-team name.
       let bi=fixtures.findIndex(f=>`${f.home} v ${f.away}`===bval);
       if(bi<0 && bval) bi=fixtures.findIndex(f=>bval.startsWith(f.home));
       if(bi<0 && bval) bi=fixtures.findIndex(f=>bval.toLowerCase().includes(f.home.toLowerCase()));
@@ -113,6 +138,13 @@ for(const rd of cfg.rounds){
     }
     if(iJoker>=0 && (row[iJoker]||"").trim().toLowerCase()==="yes"){
       if(!p.jokers.includes(rd.id)) p.jokers.push(rd.id);
+    }
+    // featured-game bonus predictions (only if the round has a featured game)
+    if(featured && (iFirstTeam>=0 || iFirstScorer>=0)){
+      p.bonus[rd.id] = {
+        firstTeam:   iFirstTeam>=0   ? (row[iFirstTeam]||"").trim()   : "",
+        firstScorer: iFirstScorer>=0 ? (row[iFirstScorer]||"").trim() : ""
+      };
     }
   }
 }
