@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23 13:31 UTC",
+  "lastUpdated": "2026-08-23 13:46 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -75,7 +75,9 @@
           "ag": null,
           "played": false
         }
-      ]
+      ],
+      "featured": null,
+      "featuredResult": null
     }
   ],
   "predictions": [
@@ -128,7 +130,8 @@
             "ag": 2
           }
         ]
-      }
+      },
+      "bonus": {}
     },
     {
       "name": "Billywizz",
@@ -179,7 +182,8 @@
             "ag": 2
           }
         ]
-      }
+      },
+      "bonus": {}
     },
     {
       "name": "Zandermc",
@@ -230,7 +234,8 @@
             "ag": 2
           }
         ]
-      }
+      },
+      "bonus": {}
     },
     {
       "name": "Juice",
@@ -283,7 +288,8 @@
             "ag": 3
           }
         ]
-      }
+      },
+      "bonus": {}
     },
     {
       "name": "Nature Boy",
@@ -334,7 +340,8 @@
             "ag": 4
           }
         ]
-      }
+      },
+      "bonus": {}
     },
     {
       "name": "Dutch",
@@ -385,7 +392,8 @@
             "ag": 3
           }
         ]
-      }
+      },
+      "bonus": {}
     },
     {
       "name": "atcolin",
@@ -438,7 +446,8 @@
             "ag": 3
           }
         ]
-      }
+      },
+      "bonus": {}
     },
     {
       "name": "An",
@@ -489,7 +498,8 @@
             "ag": 2
           }
         ]
-      }
+      },
+      "bonus": {}
     }
   ]
 }
