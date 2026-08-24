@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-24 20:28 UTC",
+  "lastUpdated": "2026-08-24 21:01 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -71,9 +71,9 @@
         {
           "home": "Fulham",
           "away": "Chelsea",
-          "hg": null,
-          "ag": null,
-          "played": false
+          "hg": 2,
+          "ag": 3,
+          "played": true
         }
       ],
       "featured": null,
