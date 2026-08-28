@@ -78,7 +78,8 @@ const JOKER_COL  = "Play your JOKER this week? (doubles your WHOLE coupon — li
    back to their canonical name here so their points stay on one row.
    Key = the typed name (any casing), value = the canonical name to keep.     */
 const ALIASES = {
-  "an": "Cowan"
+  "an": "Cowan",
+  "atcolin": "Colin"
 };
 function canonName(raw){
   const t = (raw||"").trim();
@@ -88,9 +89,16 @@ function canonName(raw){
 function colIndex(header, name){ return header.findIndex(h=>h.trim()===name); }
 // bonus columns are matched loosely by their opening words, so the fixture name
 // in the question title (which changes each week) doesn't have to match exactly.
-function colStartsWith(header, prefix){
-  const p=prefix.toLowerCase();
-  return header.findIndex(h=>h.trim().toLowerCase().startsWith(p));
+// Returns ALL matching columns (a form can end up with duplicate bonus questions);
+// per row we then take the first copy the player actually filled in.
+function colsStartingWith(header, prefix){
+  const p=prefix.toLowerCase(), out=[];
+  header.forEach((h,i)=>{ if(h.trim().toLowerCase().startsWith(p)) out.push(i); });
+  return out;
+}
+function firstFilled(row, idxs){
+  for(const i of idxs){ const v=(row[i]||"").trim(); if(v) return v; }
+  return "";
 }
 // resolve the config "featured" string to a real "Home v Away" from the fixtures
 function resolveFeatured(str, fixtures){
@@ -120,8 +128,8 @@ for(const rd of cfg.rounds){
   const iPseudo = colIndex(header, PSEUDO_COL);
   const iBanker = colIndex(header, BANKER_COL);
   const iJoker  = colIndex(header, JOKER_COL);
-  const iFirstTeam   = colStartsWith(header, "first team to score");
-  const iFirstScorer = colStartsWith(header, "first goalscorer");
+  const iFirstTeam   = colsStartingWith(header, "first team to score");
+  const iFirstScorer = colsStartingWith(header, "first goalscorer");
   // pre-find each fixture's two goal columns by exact title
   const cols = fixtures.map(f=>({
     h: colIndex(header, `${f.home} goals — (${f.home} v ${f.away})`),
@@ -151,10 +159,10 @@ for(const rd of cfg.rounds){
       if(!p.jokers.includes(rd.id)) p.jokers.push(rd.id);
     }
     // featured-game bonus predictions (only if the round has a featured game)
-    if(featured && (iFirstTeam>=0 || iFirstScorer>=0)){
+    if(featured && (iFirstTeam.length || iFirstScorer.length)){
       p.bonus[rd.id] = {
-        firstTeam:   iFirstTeam>=0   ? (row[iFirstTeam]||"").trim()   : "",
-        firstScorer: iFirstScorer>=0 ? (row[iFirstScorer]||"").trim() : ""
+        firstTeam:   firstFilled(row, iFirstTeam),
+        firstScorer: firstFilled(row, iFirstScorer)
       };
     }
   }
