@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-28 18:20 UTC",
+  "lastUpdated": "2026-08-28 20:32 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -396,7 +396,7 @@
       "bonus": {}
     },
     {
-      "name": "atcolin",
+      "name": "Colin",
       "bankers": {
         "GW1": 1
       },
