@@ -74,6 +74,17 @@ const PSEUDO_COL = "Your pseudonym / player code";
 const BANKER_COL = "BANKER — which match are you most confident about? (it scores DOUBLE)";
 const JOKER_COL  = "Play your JOKER this week? (doubles your WHOLE coupon — limited uses per season)";
 
+/* ---- name merges: if someone enters a different pseudonym one week, map it
+   back to their canonical name here so their points stay on one row.
+   Key = the typed name (any casing), value = the canonical name to keep.     */
+const ALIASES = {
+  "an": "Cowan"
+};
+function canonName(raw){
+  const t = (raw||"").trim();
+  return ALIASES[t.toLowerCase()] || t;
+}
+
 function colIndex(header, name){ return header.findIndex(h=>h.trim()===name); }
 // bonus columns are matched loosely by their opening words, so the fixture name
 // in the question title (which changes each week) doesn't have to match exactly.
@@ -119,7 +130,7 @@ for(const rd of cfg.rounds){
 
   for(let r=1;r<csv.length;r++){
     const row=csv[r];
-    const name=(row[iPseudo]||"").trim();
+    const name=canonName(row[iPseudo]);
     if(!name) continue;
     const norm=name.toLowerCase();
     if(!players.has(norm)) players.set(norm,{ name, bankers:{}, jokers:[], picks:{}, bonus:{} });
