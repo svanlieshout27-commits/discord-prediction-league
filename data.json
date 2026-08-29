@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-29 15:29 UTC",
+  "lastUpdated": "2026-08-29 18:47 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -100,23 +100,23 @@
         {
           "home": "Bournemouth",
           "away": "Everton",
-          "hg": null,
-          "ag": null,
-          "played": false
+          "hg": 1,
+          "ag": 1,
+          "played": true
         },
         {
           "home": "Coventry City",
           "away": "Hull City",
-          "hg": null,
-          "ag": null,
-          "played": false
+          "hg": 0,
+          "ag": 1,
+          "played": true
         },
         {
           "home": "Tottenham",
           "away": "Newcastle",
-          "hg": null,
-          "ag": null,
-          "played": false
+          "hg": 0,
+          "ag": 2,
+          "played": true
         },
         {
           "home": "Sunderland",
