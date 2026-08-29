@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-29 12:29 UTC",
+  "lastUpdated": "2026-08-29 15:29 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -93,9 +93,9 @@
         {
           "home": "Liverpool",
           "away": "Nottingham",
-          "hg": null,
-          "ag": null,
-          "played": false
+          "hg": 2,
+          "ag": 2,
+          "played": true
         },
         {
           "home": "Bournemouth",
