@@ -223,6 +223,18 @@
         Most points at the end of the season wins the league. 🏆</p>
     </div>
   </div>
+
+  <div class="card" id="changelog">
+    <h2><span class="bar"></span> What's New</h2>
+    <div class="rules">
+      <p style="margin:0 0 4px;color:var(--muted);font-size:12.5px">Recent updates to the league</p>
+      <ul>
+        <li>🃏 <b>4 Jokers per season</b> — up from 2, so you can double up on more big weeks.</li>
+        <li>⭐ <b>Featured “Game of the Week” bonus</b> — on marquee weeks, call the <b>first team to score</b> and the <b>first goalscorer</b> for <b>+5 each</b>.</li>
+        <li>🗓️ <b>Kickoff times &amp; dates</b> — every fixture now shows when it's played (UK time), then flips to the live score.</li>
+      </ul>
+    </div>
+  </div>
 </main>
 
 <footer>
@@ -405,3 +417,101 @@ scored.forEach((p,i)=>{
           const shown = b.resolved ? (b.res||"—") : "pending";
           const cls = !b.resolved ? "p0" : (b.ok ? "p1" : "pneg");
           return `<div class="fx feat-row">
+            <span class="match">${esc(b.label)}</span>
+            <span class="pill pred" title="your call">${esc(b.pred||"—")}</span>
+            <span class="pill res" title="actual">${esc(shown)}</span>
+            <span class="fxpts ${cls}">${b.resolved?"+"+b.pts:"·"}</span></div>`;
+        }).join("")+`</div>`:"");
+      return `<div class="round${open?' open':''}">`+
+        `<h4 class="round-head"><span class="rcaret">›</span>${esc(r.label)} — ${r.sub} pts${r.jokerOn?' <span class="jbadge">JOKER ×'+RULES.jokerMultiplier+'</span>':''}</h4>`+
+        `<div class="round-body" style="display:${open?'':'none'}">${fxHtml}</div>`+
+      `</div>`;
+    }).join("")+
+    `</div></td>`;
+  // toggle each gameweek open/closed
+  detail.querySelectorAll(".round-head").forEach(h=>{
+    h.addEventListener("click",()=>{
+      const round=h.parentElement, bodyEl=round.querySelector(".round-body");
+      const isOpen=bodyEl.style.display!=="none";
+      bodyEl.style.display=isOpen?"none":"";
+      round.classList.toggle("open",!isOpen);
+    });
+  });
+  tr.addEventListener("click",()=>{
+    const open=detail.style.display==="none";
+    detail.style.display=open?"":"none";
+    tr.classList.toggle("open",open);
+  });
+  body.appendChild(tr); body.appendChild(detail);
+});
+
+/* empty state when nobody has entered yet */
+if(scored.length===0){
+  const tr=document.createElement("tr");
+  tr.innerHTML=`<td colspan="5" style="text-align:center;color:var(--muted);padding:26px 16px">No entries yet — be the first when the Gameweek 1 form opens. ⚽</td>`;
+  body.appendChild(tr);
+}
+
+/* this-gameweek fixtures & kickoffs (shown in UK time) */
+function fmtKO(iso){
+  const d=new Date(iso); if(isNaN(d)) return "TBC";
+  return d.toLocaleString('en-GB',{weekday:'short',day:'numeric',month:'short',
+    hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Europe/London'});
+}
+(function(){
+  const wrap=document.getElementById("fixList");
+  if(!wrap || !ROUNDS.length) return;
+  const rnd=ROUNDS[ROUNDS.length-1];                 // most recent gameweek
+  const note=document.getElementById("fixNote");
+  if(note) note.textContent=rnd.label+" · kickoff times in UK time";
+  const now=Date.now();
+  rnd.fixtures.forEach(f=>{
+    const row=document.createElement("div"); row.className="fixrow";
+    const feat = rnd.featured && rnd.featured===`${f.home} v ${f.away}`;
+    let right;
+    if(f.played){
+      right=`<span class="fixscore">${f.hg}–${f.ag}</span>`;
+    } else if(f.kickoff){
+      const ko=new Date(f.kickoff).getTime();
+      right = (ko<=now) ? `<span class="fixwhen live">In play</span>`
+                        : `<span class="fixwhen">${fmtKO(f.kickoff)}</span>`;
+    } else {
+      right=`<span class="fixwhen">TBC</span>`;
+    }
+    row.innerHTML=`<span class="fixteams">${esc(f.home)} v ${esc(f.away)}${feat?'<span class="ft-badge">⭐ featured</span>':''}</span>`+right;
+    wrap.appendChild(row);
+  });
+})();
+
+/* coming-up featured games */
+const upList=document.getElementById("upcomingList");
+if(upList){
+  if(UPCOMING.length===0){
+    upList.innerHTML=`<div class="uprow tbd"><span class="upmid"><span class="upgame">Featured games will appear here.</span></span></div>`;
+  } else {
+    UPCOMING.forEach(u=>{
+      const row=document.createElement("div");
+      row.className="uprow"+(u.feat?" feat-on":" tbd");
+      row.innerHTML=`
+        <span class="upgw">${esc(u.gw)}</span>
+        <span class="upmid">
+          <span class="upgame">${u.feat?'⭐ ':''}${esc(u.game)}</span>
+          <span class="uplabel">Game of the Week</span>
+        </span>
+        <span class="upbadge">${u.feat?'First team + scorer · +5/+5':'bonus off'}</span>`;
+      upList.appendChild(row);
+    });
+  }
+}
+
+/* hero chips + updated + intro note */
+const chips=document.getElementById("chips");
+ROUNDS.forEach(r=>{ const s=document.createElement("span"); s.className="chip"; s.textContent=r.label; chips.appendChild(s); });
+document.getElementById("updated").textContent="Results last refreshed: "+LAST_UPDATED;
+/* hide the intro banner once real players have entered */
+if(PREDICTIONS.length>0){ const d=document.getElementById("demoNote"); if(d) d.style.display="none"; }
+
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+</script>
+</body>
+</html>
