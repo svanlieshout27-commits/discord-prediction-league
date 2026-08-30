@@ -115,6 +115,17 @@ const rounds = [];
 
 for(const rd of cfg.rounds){
   const fixtures = await fetchFixtures(rd.matchday);
+
+  // manual result overrides — for when the data feed lags or drops a result you
+  // already know. In config.json add:  "results": { "Home v Away": "2-1", ... }
+  const manual = rd.results || {};
+  for(const f of fixtures){
+    if(f.played) continue;
+    const raw = manual[`${f.home} v ${f.away}`] ?? manual[f.home];
+    const mm = (typeof raw==="string") && raw.match(/^\s*(\d+)\s*-\s*(\d+)\s*$/);
+    if(mm){ f.hg=+mm[1]; f.ag=+mm[2]; f.played=true; }
+  }
+
   const featured = rd.featured ? resolveFeatured(rd.featured, fixtures) : null;
   rounds.push({
     id:rd.id, label:rd.label, fixtures,
@@ -167,6 +178,20 @@ for(const rd of cfg.rounds){
     }
   }
 }
+
+/* sticky results — never lose a result we've already recorded, even if the feed
+   later drops it back to "not played" (provider hiccup). */
+try{
+  const prev = JSON.parse(readFileSync(join(here,"data.json"),"utf8")).rounds || [];
+  for(const rd of rounds){
+    const old = prev.find(o=>o.id===rd.id); if(!old) continue;
+    for(const f of rd.fixtures){
+      if(f.played) continue;
+      const o = old.fixtures.find(x=>x.home===f.home && x.away===f.away);
+      if(o && o.played && o.hg!=null && o.ag!=null){ f.hg=o.hg; f.ag=o.ag; f.played=true; }
+    }
+  }
+}catch{ /* no previous data.json yet — fine */ }
 
 const predictions=[...players.values()];
 const data={
