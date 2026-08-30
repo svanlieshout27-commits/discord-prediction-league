@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-29 23:53 UTC",
+  "lastUpdated": "2026-08-30 09:48 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -10,70 +10,80 @@
           "away": "Coventry City",
           "hg": 3,
           "ag": 0,
-          "played": true
+          "played": true,
+          "kickoff": "2026-08-21T19:00:00Z"
         },
         {
           "home": "Hull City",
           "away": "Man United",
           "hg": 2,
           "ag": 0,
-          "played": true
+          "played": true,
+          "kickoff": "2026-08-22T11:30:00Z"
         },
         {
           "home": "Ipswich Town",
           "away": "Sunderland",
           "hg": 2,
           "ag": 1,
-          "played": true
+          "played": true,
+          "kickoff": "2026-08-22T14:00:00Z"
         },
         {
           "home": "Nottingham",
           "away": "Leeds United",
           "hg": 0,
           "ag": 1,
-          "played": true
+          "played": true,
+          "kickoff": "2026-08-22T14:00:00Z"
         },
         {
           "home": "Everton",
           "away": "Crystal Palace",
           "hg": 2,
           "ag": 0,
-          "played": true
+          "played": true,
+          "kickoff": "2026-08-22T14:00:00Z"
         },
         {
           "home": "Brentford",
           "away": "Tottenham",
           "hg": 3,
           "ag": 0,
-          "played": true
+          "played": true,
+          "kickoff": "2026-08-22T16:30:00Z"
         },
         {
           "home": "Man City",
           "away": "Bournemouth",
           "hg": 2,
           "ag": 1,
-          "played": true
+          "played": true,
+          "kickoff": "2026-08-23T13:00:00Z"
         },
         {
           "home": "Brighton Hove",
           "away": "Aston Villa",
           "hg": 4,
           "ag": 0,
-          "played": true
+          "played": true,
+          "kickoff": "2026-08-23T13:00:00Z"
         },
         {
           "home": "Newcastle",
           "away": "Liverpool",
           "hg": 2,
           "ag": 2,
-          "played": true
+          "played": true,
+          "kickoff": "2026-08-23T15:30:00Z"
         },
         {
           "home": "Fulham",
           "away": "Chelsea",
           "hg": 2,
           "ag": 3,
-          "played": true
+          "played": true,
+          "kickoff": "2026-08-24T19:00:00Z"
         }
       ],
       "featured": null,
@@ -88,70 +98,80 @@
           "away": "Man City",
           "hg": 1,
           "ag": 4,
-          "played": true
+          "played": true,
+          "kickoff": "2026-08-28T19:00:00Z"
         },
         {
           "home": "Liverpool",
           "away": "Nottingham",
-          "hg": 2,
-          "ag": 2,
-          "played": true
+          "hg": null,
+          "ag": null,
+          "played": false,
+          "kickoff": "2026-08-29T11:30:00Z"
         },
         {
           "home": "Bournemouth",
           "away": "Everton",
-          "hg": 1,
-          "ag": 1,
-          "played": true
+          "hg": null,
+          "ag": null,
+          "played": false,
+          "kickoff": "2026-08-29T14:00:00Z"
         },
         {
           "home": "Coventry City",
           "away": "Hull City",
-          "hg": 0,
-          "ag": 1,
-          "played": true
+          "hg": null,
+          "ag": null,
+          "played": false,
+          "kickoff": "2026-08-29T14:00:00Z"
         },
         {
           "home": "Tottenham",
           "away": "Newcastle",
-          "hg": 0,
-          "ag": 2,
-          "played": true
+          "hg": null,
+          "ag": null,
+          "played": false,
+          "kickoff": "2026-08-29T16:30:00Z"
         },
         {
           "home": "Sunderland",
           "away": "Fulham",
           "hg": null,
           "ag": null,
-          "played": false
+          "played": false,
+          "kickoff": "2026-08-30T13:00:00Z"
         },
         {
           "home": "Chelsea",
           "away": "Brighton Hove",
           "hg": null,
           "ag": null,
-          "played": false
+          "played": false,
+          "kickoff": "2026-08-30T13:00:00Z"
         },
         {
           "home": "Leeds United",
           "away": "Brentford",
           "hg": null,
           "ag": null,
-          "played": false
+          "played": false,
+          "kickoff": "2026-08-30T13:00:00Z"
         },
         {
           "home": "Man United",
           "away": "Ipswich Town",
           "hg": null,
           "ag": null,
-          "played": false
+          "played": false,
+          "kickoff": "2026-08-30T15:30:00Z"
         },
         {
           "home": "Aston Villa",
           "away": "Arsenal",
           "hg": null,
           "ag": null,
-          "played": false
+          "played": false,
+          "kickoff": "2026-08-31T19:00:00Z"
         }
       ],
       "featured": "Tottenham v Newcastle",
