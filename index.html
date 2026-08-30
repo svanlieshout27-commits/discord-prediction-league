@@ -112,14 +112,51 @@
   .uprow.feat-on{border-color:#f0e3b8;background:#fffdf3}
   .upgw{flex:0 0 auto;font-weight:800;font-size:12px;color:#fff;background:var(--blue);border-radius:8px;padding:4px 9px;letter-spacing:.02em}
   .uprow.feat-on .upgw{background:#c99700}
-  .upmid{flex:1;min-width:0}
-  .upgame{font-weight:700;color:var(--ink);font-size:14.5px}
-  .uplabel{color:var(--muted);font-size:12px;margin-top:1px}
+  .upmid{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+  .upgame{display:block;font-weight:700;color:var(--ink);font-size:14.5px;line-height:1.25}
+  .uplabel{display:block;color:var(--muted);font-size:12px}
   .upbadge{flex:0 0 auto;font-size:11px;font-weight:800;color:#8a6d00;background:#fff6d9;border:1px solid #f0e3b8;
     border-radius:999px;padding:4px 10px;white-space:nowrap}
   .uprow.tbd .upgame{color:var(--muted);font-weight:600}
   .uprow.tbd .upbadge{color:var(--muted);background:#f1f3f7;border-color:var(--line)}
   @media(max-width:520px){.upbadge{display:none}}
+
+  .cupnote{padding:12px 20px 2px;color:var(--muted);font-size:12.5px}
+  .cupwrap{padding:10px 14px 16px;display:grid;gap:14px}
+  .cupround h3{margin:4px 4px 8px;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--blue);font-weight:800}
+  .ties{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px}
+  .tie{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fbfcfe}
+  .tiehead{display:flex;justify-content:space-between;align-items:center;padding:6px 12px;background:#f2f5fb;font-size:11px;color:var(--muted);font-weight:700}
+  .tiehead .tag{font-weight:800}
+  .tag.live{color:var(--red)} .tag.await{color:var(--muted)} .tag.done{color:var(--good)}
+  .tie .row{display:flex;align-items:center;gap:10px;padding:9px 12px}
+  .tie .row+.row{border-top:1px solid var(--line)}
+  .tie .nm{flex:1;min-width:0;font-weight:600;color:var(--ink);font-size:14px}
+  .tie .sc{flex:0 0 auto;font-weight:800;color:var(--muted);font-variant-numeric:tabular-nums;min-width:28px;text-align:right}
+  .tie .row.win{background:#eaf5ec}
+  .tie .row.win .nm{color:var(--good)} .tie .row.win .sc{color:var(--good)}
+  .tie .row.win .nm::after{content:" ✓";color:var(--good)}
+  .tie .row.lead .nm{color:var(--blue)} .tie .row.lead .sc{color:var(--blue)}
+  .champ{padding:12px 16px;border:1px solid #f0e3b8;background:#fffdf3;border-radius:12px;text-align:center;font-weight:800;color:#8a6d00}
+  .cupprize{padding:10px 14px;border:1px solid #f0e3b8;background:#fffdf3;border-radius:12px;font-weight:700;color:#8a6d00;font-size:13px;text-align:center}
+  .cuppending{padding:18px 16px;border:1px dashed #c4d1e8;border-radius:12px;background:#f7faff;text-align:center}
+  .cp-h{font-weight:800;color:var(--blue);font-size:15px}
+  .cp-sub{color:var(--muted);font-size:12.5px;margin-top:3px}
+  .cp-chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:12px}
+  .cp-chip{background:#e7eefb;border:1px solid #d4e0f5;color:var(--blue);font-weight:700;font-size:12.5px;padding:4px 11px;border-radius:999px}
+
+  .roadlist{padding:10px 14px 16px;display:grid;gap:8px}
+  .roadrow{display:flex;gap:12px;align-items:center;padding:11px 14px;border:1px solid var(--line);border-radius:12px;background:#fbfcfe}
+  .roadrow.soon{border-color:#f0e3b8;background:#fffdf3}
+  .roadwhen{flex:0 0 auto;font-weight:800;font-size:11.5px;color:#fff;background:var(--blue);border-radius:8px;padding:5px 9px;white-space:nowrap;min-width:66px;text-align:center}
+  .roadrow.soon .roadwhen{background:#c99700}
+  .roadmid{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+  .roadtitle{display:block;font-weight:700;color:var(--ink);font-size:14.5px;line-height:1.25}
+  .roaddesc{display:block;color:var(--muted);font-size:12.5px;line-height:1.35}
+  .roadtag{flex:0 0 auto;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:3px 9px;border-radius:999px}
+  .roadtag.soon{color:#8a6d00;background:#fff6d9;border:1px solid #f0e3b8}
+  .roadtag.planned{color:var(--muted);background:#f1f3f7;border:1px solid var(--line)}
+  @media(max-width:520px){.roadtag{display:none}}
 
   .rules{padding:16px 20px;font-size:14.5px}
   .rules ul{margin:10px 0 0;padding-left:20px}
@@ -147,6 +184,7 @@
     <div class="navlinks">
       <a href="#leaderboard">Leaderboard</a>
       <a href="#howto">How to Play</a>
+      <a href="#cup">Cup</a>
       <a href="#scoring">Rules</a>
     </div>
   </div>
@@ -191,6 +229,12 @@
     <div class="uplist" id="upcomingList"></div>
   </div>
 
+  <div class="card" id="cup">
+    <h2><span class="bar"></span> League Cup</h2>
+    <div class="cupnote" id="cupNote"></div>
+    <div class="cupwrap" id="cupBody"></div>
+  </div>
+
   <div class="card" id="howto">
     <h2><span class="bar"></span> How to Play</h2>
     <div class="rules">
@@ -224,6 +268,12 @@
     </div>
   </div>
 
+  <div class="card" id="roadmap">
+    <h2><span class="bar"></span> Still to Come</h2>
+    <div class="cupnote">New features rolling out across the season — here's what's on the way.</div>
+    <div class="roadlist" id="roadList"></div>
+  </div>
+
   <div class="card" id="changelog">
     <h2><span class="bar"></span> What's New</h2>
     <div class="rules">
@@ -232,6 +282,7 @@
         <li>🃏 <b>4 Jokers per season</b> — up from 2, so you can double up on more big weeks.</li>
         <li>⭐ <b>Featured “Game of the Week” bonus</b> — on marquee weeks, call the <b>first team to score</b> and the <b>first goalscorer</b> for <b>+5 each</b>.</li>
         <li>🗓️ <b>Kickoff times &amp; dates</b> — every fixture now shows when it's played (UK time), then flips to the live score.</li>
+        <li>🏆 <b>League Cup</b> — a knockout running over GW5–GW7: your weekly coupon goes head-to-head, winner advances. Bragging rights on the line.</li>
       </ul>
     </div>
   </div>
@@ -260,8 +311,9 @@
 <script>
 /* ============================================================================
    DATA — everything the leaderboard needs, in one block.
-   The weekly refresh (refresh.mjs) rewrites the JSON between the __DATA__ markers.
-     rounds[].fixtures[] : { home, away, hg, ag, played, kickoff }
+   The weekly refresh (build.mjs) rewrites the JSON between the __DATA__ markers
+   using real football-data.org results + the predictions CSV. Left as-is, the demo runs.
+     rounds[].fixtures[] : { home, away, hg, ag, played }   (hg/ag = goals)
      rounds[].featured  : "Home v Away" or null  (the week's marquee bonus game)
      rounds[].featuredResult : { firstTeam, firstScorer }  (entered by hand after the game)
      predictions[].picks[roundId] : [{hg,ag}, ...] in fixture order
@@ -270,996 +322,9 @@
      player identity across weeks = pseudonym (players must reuse it)
    ============================================================================ */
 const DATA = /*__DATA_START__*/{
-  "lastUpdated": "2026-08-30 18:43 UTC",
-  "rounds": [
-    {
-      "id": "GW1",
-      "label": "Gameweek 1",
-      "fixtures": [
-        {
-          "home": "Arsenal",
-          "away": "Coventry City",
-          "hg": 3,
-          "ag": 0,
-          "played": true,
-          "kickoff": "2026-08-21T19:00:00Z"
-        },
-        {
-          "home": "Hull City",
-          "away": "Man United",
-          "hg": 2,
-          "ag": 0,
-          "played": true,
-          "kickoff": "2026-08-22T11:30:00Z"
-        },
-        {
-          "home": "Ipswich Town",
-          "away": "Sunderland",
-          "hg": 2,
-          "ag": 1,
-          "played": true,
-          "kickoff": "2026-08-22T14:00:00Z"
-        },
-        {
-          "home": "Nottingham",
-          "away": "Leeds United",
-          "hg": 0,
-          "ag": 1,
-          "played": true,
-          "kickoff": "2026-08-22T14:00:00Z"
-        },
-        {
-          "home": "Everton",
-          "away": "Crystal Palace",
-          "hg": 2,
-          "ag": 0,
-          "played": true,
-          "kickoff": "2026-08-22T14:00:00Z"
-        },
-        {
-          "home": "Brentford",
-          "away": "Tottenham",
-          "hg": 3,
-          "ag": 0,
-          "played": true,
-          "kickoff": "2026-08-22T16:30:00Z"
-        },
-        {
-          "home": "Man City",
-          "away": "Bournemouth",
-          "hg": 2,
-          "ag": 1,
-          "played": true,
-          "kickoff": "2026-08-23T13:00:00Z"
-        },
-        {
-          "home": "Brighton Hove",
-          "away": "Aston Villa",
-          "hg": 4,
-          "ag": 0,
-          "played": true,
-          "kickoff": "2026-08-23T13:00:00Z"
-        },
-        {
-          "home": "Newcastle",
-          "away": "Liverpool",
-          "hg": 2,
-          "ag": 2,
-          "played": true,
-          "kickoff": "2026-08-23T15:30:00Z"
-        },
-        {
-          "home": "Fulham",
-          "away": "Chelsea",
-          "hg": 2,
-          "ag": 3,
-          "played": true,
-          "kickoff": "2026-08-24T19:00:00Z"
-        }
-      ],
-      "featured": null,
-      "featuredResult": null
-    },
-    {
-      "id": "GW2",
-      "label": "Gameweek 2",
-      "fixtures": [
-        {
-          "home": "Crystal Palace",
-          "away": "Man City",
-          "hg": 1,
-          "ag": 4,
-          "played": true,
-          "kickoff": "2026-08-28T19:00:00Z"
-        },
-        {
-          "home": "Liverpool",
-          "away": "Nottingham",
-          "hg": 2,
-          "ag": 2,
-          "played": true,
-          "kickoff": "2026-08-29T11:30:00Z"
-        },
-        {
-          "home": "Bournemouth",
-          "away": "Everton",
-          "hg": 1,
-          "ag": 1,
-          "played": true,
-          "kickoff": "2026-08-29T14:00:00Z"
-        },
-        {
-          "home": "Coventry City",
-          "away": "Hull City",
-          "hg": 0,
-          "ag": 1,
-          "played": true,
-          "kickoff": "2026-08-29T14:00:00Z"
-        },
-        {
-          "home": "Tottenham",
-          "away": "Newcastle",
-          "hg": 0,
-          "ag": 2,
-          "played": true,
-          "kickoff": "2026-08-29T16:30:00Z"
-        },
-        {
-          "home": "Sunderland",
-          "away": "Fulham",
-          "hg": 1,
-          "ag": 0,
-          "played": true,
-          "kickoff": "2026-08-30T13:00:00Z"
-        },
-        {
-          "home": "Chelsea",
-          "away": "Brighton Hove",
-          "hg": 4,
-          "ag": 3,
-          "played": true,
-          "kickoff": "2026-08-30T13:00:00Z"
-        },
-        {
-          "home": "Leeds United",
-          "away": "Brentford",
-          "hg": 1,
-          "ag": 1,
-          "played": true,
-          "kickoff": "2026-08-30T13:00:00Z"
-        },
-        {
-          "home": "Man United",
-          "away": "Ipswich Town",
-          "hg": 5,
-          "ag": 2,
-          "played": true,
-          "kickoff": "2026-08-30T15:30:00Z"
-        },
-        {
-          "home": "Aston Villa",
-          "away": "Arsenal",
-          "hg": null,
-          "ag": null,
-          "played": false,
-          "kickoff": "2026-08-31T19:00:00Z"
-        }
-      ],
-      "featured": "Tottenham v Newcastle",
-      "featuredResult": {
-        "firstTeam": "Newcastle",
-        "firstScorer": "Elanga"
-      }
-    }
-  ],
-  "predictions": [
-    {
-      "name": "Signori",
-      "bankers": {
-        "GW1": 0,
-        "GW2": 9
-      },
-      "jokers": [],
-      "picks": {
-        "GW1": [
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 3
-          },
-          {
-            "hg": 2,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 2
-          },
-          {
-            "hg": 3,
-            "ag": 3
-          },
-          {
-            "hg": 3,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 4
-          },
-          {
-            "hg": 3,
-            "ag": 2
-          }
-        ],
-        "GW2": [
-          {
-            "hg": 1,
-            "ag": 3
-          },
-          {
-            "hg": 4,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 0
-          },
-          {
-            "hg": 2,
-            "ag": 2
-          },
-          {
-            "hg": 2,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 3
-          },
-          {
-            "hg": 2,
-            "ag": 1
-          },
-          {
-            "hg": 0,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 4
-          }
-        ]
-      },
-      "bonus": {
-        "GW2": {
-          "firstTeam": "Tottenham",
-          "firstScorer": "Tonali"
-        }
-      }
-    },
-    {
-      "name": "Billywizz",
-      "bankers": {
-        "GW1": 0,
-        "GW2": 1
-      },
-      "jokers": [],
-      "picks": {
-        "GW1": [
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 3
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 2
-          },
-          {
-            "hg": 0,
-            "ag": 1
-          },
-          {
-            "hg": 4,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 0,
-            "ag": 3
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          }
-        ],
-        "GW2": [
-          {
-            "hg": 1,
-            "ag": 3
-          },
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 2,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          }
-        ]
-      },
-      "bonus": {
-        "GW2": {
-          "firstTeam": "Tottenham",
-          "firstScorer": "Richarlieson"
-        }
-      }
-    },
-    {
-      "name": "Zandermc",
-      "bankers": {
-        "GW1": 6,
-        "GW2": 6
-      },
-      "jokers": [
-        "GW2"
-      ],
-      "picks": {
-        "GW1": [
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 3
-          },
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 3
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          }
-        ],
-        "GW2": [
-          {
-            "hg": 1,
-            "ag": 3
-          },
-          {
-            "hg": 2,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 2,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 3
-          }
-        ]
-      },
-      "bonus": {
-        "GW2": {
-          "firstTeam": "Newcastle",
-          "firstScorer": "Elanga"
-        }
-      }
-    },
-    {
-      "name": "Juice",
-      "bankers": {
-        "GW1": 6,
-        "GW2": 9
-      },
-      "jokers": [
-        "GW1"
-      ],
-      "picks": {
-        "GW1": [
-          {
-            "hg": 3,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 2,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 3
-          },
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 2,
-            "ag": 3
-          },
-          {
-            "hg": 0,
-            "ag": 3
-          }
-        ],
-        "GW2": [
-          {
-            "hg": 2,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 1
-          },
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 2
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          },
-          {
-            "hg": 3,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 3,
-            "ag": 1
-          },
-          {
-            "hg": 0,
-            "ag": 3
-          }
-        ]
-      },
-      "bonus": {
-        "GW2": {
-          "firstTeam": "Tottenham",
-          "firstScorer": "Richarlison"
-        }
-      }
-    },
-    {
-      "name": "Nature Boy",
-      "bankers": {
-        "GW1": 6,
-        "GW2": 8
-      },
-      "jokers": [],
-      "picks": {
-        "GW1": [
-          {
-            "hg": 4,
-            "ag": 0
-          },
-          {
-            "hg": 2,
-            "ag": 3
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 2
-          },
-          {
-            "hg": 0,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 0
-          },
-          {
-            "hg": 3,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 3
-          },
-          {
-            "hg": 1,
-            "ag": 3
-          },
-          {
-            "hg": 1,
-            "ag": 4
-          }
-        ],
-        "GW2": [
-          {
-            "hg": 1,
-            "ag": 3
-          },
-          {
-            "hg": 3,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 2
-          },
-          {
-            "hg": 0,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 0,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          },
-          {
-            "hg": 2,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 4
-          }
-        ]
-      },
-      "bonus": {
-        "GW2": {
-          "firstTeam": "Newcastle",
-          "firstScorer": "Harvey Barnes"
-        }
-      }
-    },
-    {
-      "name": "Dutch",
-      "bankers": {
-        "GW1": 0,
-        "GW2": 9
-      },
-      "jokers": [],
-      "picks": {
-        "GW1": [
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 2,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          },
-          {
-            "hg": 3,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 3
-          }
-        ],
-        "GW2": [
-          {
-            "hg": 0,
-            "ag": 3
-          },
-          {
-            "hg": 2,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 2,
-            "ag": 1
-          },
-          {
-            "hg": 0,
-            "ag": 1
-          },
-          {
-            "hg": 3,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 0
-          },
-          {
-            "hg": 2,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 3
-          }
-        ]
-      },
-      "bonus": {
-        "GW2": {
-          "firstTeam": "Tottenham",
-          "firstScorer": "Moore"
-        }
-      }
-    },
-    {
-      "name": "Colin",
-      "bankers": {
-        "GW1": 1,
-        "GW2": 4
-      },
-      "jokers": [
-        "GW1"
-      ],
-      "picks": {
-        "GW1": [
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 3
-          }
-        ],
-        "GW2": [
-          {
-            "hg": 0,
-            "ag": 3
-          },
-          {
-            "hg": 2,
-            "ag": 1
-          },
-          {
-            "hg": 0,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 2
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 2,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 0
-          },
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 0,
-            "ag": 3
-          }
-        ]
-      },
-      "bonus": {
-        "GW2": {
-          "firstTeam": "Tottenham",
-          "firstScorer": "Moore"
-        }
-      }
-    },
-    {
-      "name": "Cowan",
-      "bankers": {
-        "GW1": 0,
-        "GW2": 4
-      },
-      "jokers": [],
-      "picks": {
-        "GW1": [
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          },
-          {
-            "hg": 0,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 2
-          },
-          {
-            "hg": 4,
-            "ag": 1
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          },
-          {
-            "hg": 0,
-            "ag": 2
-          }
-        ],
-        "GW2": [
-          {
-            "hg": 1,
-            "ag": 4
-          },
-          {
-            "hg": 2,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 1
-          },
-          {
-            "hg": 0,
-            "ag": 0
-          },
-          {
-            "hg": 3,
-            "ag": 0
-          },
-          {
-            "hg": 1,
-            "ag": 0
-          },
-          {
-            "hg": 3,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 1
-          },
-          {
-            "hg": 2,
-            "ag": 0
-          },
-          {
-            "hg": 0,
-            "ag": 3
-          }
-        ]
-      },
-      "bonus": {
-        "GW2": {
-          "firstTeam": "Tottenham",
-          "firstScorer": "Marmoush"
-        }
-      }
-    }
-  ]
+  "lastUpdated": "—",
+  "rounds": [],
+  "predictions": []
 }/*__DATA_END__*/;
 
 const ROUNDS = DATA.rounds;
@@ -1270,7 +335,7 @@ const LAST_UPDATED = DATA.lastUpdated;
    COMING UP — the marquee game for upcoming weeks (edit freely).
    feat:true  -> featured week (first team + first goalscorer bonus in play)
    feat:false -> no big-six clash that week; pick one or leave the bonus off
-   Remove a row once that week has been played.
+   Remove a row (or set done:true) once that week has been played.
    ============================================================================ */
 const UPCOMING = [
   { gw:"GW2",  game:"Tottenham v Newcastle",   feat:true  },
@@ -1282,6 +347,21 @@ const UPCOMING = [
   { gw:"GW8",  game:"Chelsea v Tottenham",      feat:true  },
   { gw:"GW9",  game:"Liverpool v Arsenal",      feat:true  },
   { gw:"GW10", game:"No marquee clash — TBC",   feat:false }
+];
+
+/* ============================================================================
+   STILL TO COME — season feature roadmap (edit freely).
+   status: "soon" = next up (highlighted), "planned" = later.
+   ============================================================================ */
+const ROADMAP = [
+  { when:"GW5–7",   title:"Knockout Cup",      desc:"Head-to-head bracket — winner lifts the cup.",                 status:"soon" },
+  { when:"From GW8", title:"Manager of the Month", desc:"Top scorer each month gets the crown and a recap.",         status:"planned" },
+  { when:"GW13",    title:"Achievement Badges", desc:"Unlockable trophies: exact merchant, banker streak, upset caller.", status:"planned" },
+  { when:"GW19",    title:"Mid-Season Awards",  desc:"Halfway recap — best and worst calls of the season so far.",   status:"planned" },
+  { when:"GW21–23", title:"The Plate",          desc:"Second-chance knockout for those knocked out of the cup early.", status:"planned" },
+  { when:"GW27",    title:"Category Leaders",   desc:"Mini-tables: most exacts, best banker, most bonus points.",    status:"planned" },
+  { when:"GW30–33", title:"Spring Cup",         desc:"A second knockout — clean slate, whole field, a fresh trophy for the run-in.", status:"planned" },
+  { when:"Run-in",  title:"Season Finale",      desc:"End-of-season awards and the champion crowned.",               status:"planned" }
 ];
 
 /* ============================================================================
@@ -1300,7 +380,7 @@ const RULES = {
 
 /* tolerant text matching for the featured-game bonuses */
 function normStr(s){
-  return String(s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+  return String(s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"")
     .replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim();
 }
 function scorerMatch(pred, actual){
@@ -1470,6 +550,119 @@ function fmtKO(iso){
   });
 })();
 
+/* ============================================================================
+   KNOCKOUT CUP — head-to-head ties on the same weekly coupons.
+   Edit CUP below: which gameweek each round uses, and the first-round draw.
+   Seeded here 1v8/4v5/2v7/3v6 from the post-GW2 table (top 2 kept apart).
+   ============================================================================ */
+const CUP = {
+  name: "League Cup",
+  jokerCounts: true,   // does a played joker count toward the cup tie? (true = yes)
+  prize: "🏆 Winner earns +1 Joker for the season — capped, so winning two cups won't stack it.",
+  drawn: false,   // set true once the QF draw is made (reveal near GW4); until then the card just teases
+  rounds: [
+    { name:"Quarter-finals", gw:"GW5" },
+    { name:"Semi-finals",    gw:"GW6" },
+    { name:"Final",          gw:"GW7" }
+  ],
+  // first-round ties by pseudonym (top half then bottom half)
+  bracket: [
+    ["Zandermc","Signori"],
+    ["Juice","Nature Boy"],
+    ["Cowan","Colin"],
+    ["Dutch","Billywizz"]
+  ]
+};
+function pget(name){ return PREDICTIONS.find(p=>p.name.toLowerCase()===String(name).toLowerCase()); }
+function gwStats(p, gwId){
+  const r = ROUNDS.find(x=>x.id===gwId);
+  if(!p || !r) return { exists:!!r, submitted:false, pts:0, exact:0, outc:0, bankerPts:0, bonus:0, complete:false };
+  const picks = p.picks[gwId]||[]; const submitted = picks.length>0;
+  const bIdx = p.bankers?p.bankers[gwId]:undefined;
+  const jokerOn = p.jokers && p.jokers.includes(gwId);
+  let pts=0, exact=0, outc=0, bankerPts=0, played=0;
+  r.fixtures.forEach((f,i)=>{
+    if(f.played) played++;
+    const pr=picks[i]; let fp=0, isE=false, isO=false;
+    if(pr && f.played){
+      if(pr.hg===f.hg && pr.ag===f.ag){ fp=RULES.exactScore; isE=true; }
+      else if(outcome(pr.hg,pr.ag)===outcome(f.hg,f.ag)){ fp=RULES.correctOutcome; isO=true; }
+      if(!isE && (pr.hg===f.hg||pr.ag===f.ag) && RULES.closeGoals) fp+=RULES.closeGoals;
+    }
+    if(i===bIdx){ fp*=RULES.bankerMultiplier; bankerPts=fp; }
+    pts+=fp; if(isE)exact++; else if(isO)outc++;
+  });
+  let bonus=0;
+  if(r.featured && r.featuredResult){ const b=p.bonus&&p.bonus[gwId]; const fr=r.featuredResult;
+    if(b){ if(fr.firstTeam && normStr(b.firstTeam)===normStr(fr.firstTeam)) bonus+=RULES.firstTeamToScore;
+           if(fr.firstScorer && scorerMatch(b.firstScorer,fr.firstScorer)) bonus+=RULES.firstGoalscorer; } }
+  pts+=bonus;
+  if(CUP.jokerCounts && jokerOn) pts*=RULES.jokerMultiplier;
+  const complete = r.fixtures.length>0 && played===r.fixtures.length;
+  return { exists:true, submitted, pts, exact, outc, bankerPts, bonus, complete };
+}
+function decideTie(nameA, nameB, gwId){
+  const sa=gwStats(pget(nameA),gwId), sb=gwStats(pget(nameB),gwId);
+  const res={ a:nameA, b:nameB, gw:gwId, sa, sb, winner:null, leader:null, status:"pending" };
+  if(!sa.exists) return res;                          // that gameweek isn't in the data yet
+  if(sa.submitted && !sb.submitted){ res.winner=nameA; res.status="walkover"; return res; }
+  if(!sa.submitted && sb.submitted){ res.winner=nameB; res.status="walkover"; return res; }
+  if(!sa.complete){ res.status="live"; res.leader = sa.pts===sb.pts?null:(sa.pts>sb.pts?nameA:nameB); return res; }
+  for(const k of ["pts","exact","outc","bankerPts","bonus"]){
+    if(sa[k]!==sb[k]){ res.winner = sa[k]>sb[k]?nameA:nameB; res.status="decided"; return res; }
+  }
+  res.winner=nameA; res.status="decided"; res.bySeed=true;   // dead level -> higher seed (listed first)
+  return res;
+}
+function computeCup(){
+  const qf = CUP.bracket.map(([a,b])=>decideTie(a,b,CUP.rounds[0].gw));
+  const sfPairs=[[qf[0].winner,qf[1].winner],[qf[2].winner,qf[3].winner]];
+  const sf = sfPairs.map(([a,b])=> (a&&b)?decideTie(a,b,CUP.rounds[1].gw):{a,b,gw:CUP.rounds[1].gw,winner:null,leader:null,status:"awaiting"});
+  const fa=sf[0].winner, fb=sf[1].winner;
+  const fin = (fa&&fb)?decideTie(fa,fb,CUP.rounds[2].gw):{a:fa,b:fb,gw:CUP.rounds[2].gw,winner:null,leader:null,status:"awaiting"};
+  return { qf, sf, fin, champion: fin.winner };
+}
+(function(){
+  const wrap=document.getElementById("cupBody"); if(!wrap) return;
+  const note=document.getElementById("cupNote");
+  if(note) note.textContent = CUP.rounds.map(r=>`${r.name} (${r.gw})`).join(" · ")+" — each tie is decided by that gameweek's coupon points.";
+  if(CUP.prize){ const pz=document.createElement("div"); pz.className="cupprize"; pz.textContent=CUP.prize; wrap.appendChild(pz); }
+  if(!CUP.drawn){
+    const entrants=[...new Set(CUP.bracket.flat())];
+    const box=document.createElement("div"); box.className="cuppending";
+    box.innerHTML=`<div class="cp-h">🎲 Quarter-final draw revealed before ${esc(CUP.rounds[0].gw)}</div>`+
+      `<div class="cp-sub">8 players · single elimination over ${esc(CUP.rounds[0].gw)}–${esc(CUP.rounds[2].gw)}</div>`+
+      (entrants.length?`<div class="cp-chips">`+entrants.map(n=>`<span class="cp-chip">${esc(n)}</span>`).join("")+`</div>`:"");
+    wrap.appendChild(box);
+    return;
+  }
+  const cup=computeCup();
+  const scOf=s=> (s && s.exists!==false && (s.pts||s.pts===0)) ? s.pts : "";
+  function tieEl(t){
+    const el=document.createElement("div"); el.className="tie";
+    const tagCls = t.status==="live"?"live":((t.status==="decided"||t.status==="walkover")?"done":"await");
+    const tagTxt = t.status==="live"?"LIVE":(t.status==="decided"?"FT":(t.status==="walkover"?"W/O":"—"));
+    const aWin=t.winner===t.a, bWin=t.winner===t.b;
+    const aLead=t.status==="live"&&t.leader===t.a, bLead=t.status==="live"&&t.leader===t.b;
+    el.innerHTML =
+      `<div class="tiehead"><span>${esc(t.gw||"")}</span><span class="tag ${tagCls}">${tagTxt}</span></div>`+
+      `<div class="row ${aWin?'win':''} ${aLead?'lead':''}"><span class="nm">${t.a?esc(t.a):"—"}</span><span class="sc">${scOf(t.sa)}</span></div>`+
+      `<div class="row ${bWin?'win':''} ${bLead?'lead':''}"><span class="nm">${t.b?esc(t.b):"—"}</span><span class="sc">${scOf(t.sb)}</span></div>`;
+    return el;
+  }
+  [["Quarter-finals",cup.qf],["Semi-finals",cup.sf],["Final",[cup.fin]]].forEach(([label,ties])=>{
+    const sec=document.createElement("div"); sec.className="cupround";
+    sec.innerHTML=`<h3>${esc(label)}</h3>`;
+    const tw=document.createElement("div"); tw.className="ties";
+    ties.forEach(t=>tw.appendChild(tieEl(t)));
+    sec.appendChild(tw); wrap.appendChild(sec);
+  });
+  if(cup.champion){
+    const ch=document.createElement("div"); ch.className="champ";
+    ch.textContent="🏆 Cup Champion: "+cup.champion; wrap.appendChild(ch);
+  }
+})();
+
 /* coming-up featured games */
 const upList=document.getElementById("upcomingList");
 if(upList){
@@ -1489,6 +682,19 @@ if(upList){
       upList.appendChild(row);
     });
   }
+}
+
+/* still to come — feature roadmap */
+const roadWrap=document.getElementById("roadList");
+if(roadWrap && typeof ROADMAP!=='undefined'){
+  ROADMAP.forEach(r=>{
+    const row=document.createElement("div");
+    row.className="roadrow"+(r.status==="soon"?" soon":"");
+    row.innerHTML=`<span class="roadwhen">${esc(r.when)}</span>`+
+      `<span class="roadmid"><span class="roadtitle">${esc(r.title)}</span><span class="roaddesc">${esc(r.desc)}</span></span>`+
+      `<span class="roadtag ${r.status==='soon'?'soon':'planned'}">${r.status==='soon'?'Next up':'Planned'}</span>`;
+    roadWrap.appendChild(row);
+  });
 }
 
 /* hero chips + updated + intro note */
