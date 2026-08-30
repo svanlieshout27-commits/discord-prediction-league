@@ -59,7 +59,7 @@ async function fetchFixtures(matchday){
       const away=m.awayTeam.shortName||m.awayTeam.name;
       const ft=m.score.fullTime;
       const played=m.status==="FINISHED";
-      return { home, away, hg: played?ft.home:null, ag: played?ft.away:null, played };
+      return { home, away, hg: played?ft.home:null, ag: played?ft.away:null, played, kickoff:m.utcDate };
     });
 }
 
