@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-31 20:19 UTC",
+  "lastUpdated": "2026-08-31 21:05 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -168,9 +168,9 @@
         {
           "home": "Aston Villa",
           "away": "Arsenal",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 0,
+          "ag": 1,
+          "played": true,
           "kickoff": "2026-08-31T19:00:00Z"
         }
       ],
