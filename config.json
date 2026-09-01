@@ -14,6 +14,10 @@
         "Tottenham v Newcastle": "0-2",
         "Aston Villa v Arsenal": "0-1"
       }
-    }
+    },
+    { "id": "GW3", "label": "Gameweek 3", "matchday": 3,
+      "csvUrl": "PASTE_YOUR_GW3_CSV_LINK",
+      "featured": "Arsenal v Chelsea",
+      "featuredResult": { "firstTeam": "", "firstScorer": "" } }
   ]
 }
