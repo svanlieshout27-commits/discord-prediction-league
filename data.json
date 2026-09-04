@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-04 20:55 UTC",
+  "lastUpdated": "2026-09-04 22:28 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -187,9 +187,9 @@
         {
           "home": "Ipswich Town",
           "away": "Liverpool",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 0,
+          "ag": 2,
+          "played": true,
           "kickoff": "2026-09-04T19:00:00Z"
         },
         {
