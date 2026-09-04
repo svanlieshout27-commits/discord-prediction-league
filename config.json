@@ -16,7 +16,7 @@
       }
     },
     { "id": "GW3", "label": "Gameweek 3", "matchday": 3,
-      "csvUrl": "PASTE_YOUR_GW3_CSV_LINK",
+      "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vShtl0cM8wL0Vs7WZRJYVDd6oY5prOdlgM-ZJkLQgc-Dqnzr6WNNls5Ojk2vTLi0UdEHvZcNTDqaMmh/pub?output=csv",
       "featured": "Arsenal v Chelsea",
       "featuredResult": { "firstTeam": "", "firstScorer": "" } }
   ]
