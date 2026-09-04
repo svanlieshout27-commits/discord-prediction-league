@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-04 18:06 UTC",
+  "lastUpdated": "2026-09-04 20:45 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -277,9 +277,12 @@
       "name": "Signori",
       "bankers": {
         "GW1": 0,
-        "GW2": 9
+        "GW2": 9,
+        "GW3": 0
       },
-      "jokers": [],
+      "jokers": [
+        "GW3"
+      ],
       "picks": {
         "GW1": [
           {
@@ -363,6 +366,48 @@
           {
             "hg": 1,
             "ag": 4
+          }
+        ],
+        "GW3": [
+          {
+            "hg": 1,
+            "ag": 3
+          },
+          {
+            "hg": 4,
+            "ag": 2
+          },
+          {
+            "hg": 3,
+            "ag": 2
+          },
+          {
+            "hg": 5,
+            "ag": 1
+          },
+          {
+            "hg": 3,
+            "ag": 0
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 3
+          },
+          {
+            "hg": 1,
+            "ag": 1
           }
         ]
       },
@@ -370,6 +415,10 @@
         "GW2": {
           "firstTeam": "Tottenham",
           "firstScorer": "Tonali"
+        },
+        "GW3": {
+          "firstTeam": "Chelsea",
+          "firstScorer": "Pedro"
         }
       }
     },
@@ -377,7 +426,8 @@
       "name": "Billywizz",
       "bankers": {
         "GW1": 0,
-        "GW2": 1
+        "GW2": 1,
+        "GW3": 9
       },
       "jokers": [],
       "picks": {
@@ -462,6 +512,48 @@
           },
           {
             "hg": 1,
+            "ag": 2
+          }
+        ],
+        "GW3": [
+          {
+            "hg": 1,
+            "ag": 3
+          },
+          {
+            "hg": 2,
+            "ag": 2
+          },
+          {
+            "hg": 3,
+            "ag": 1
+          },
+          {
+            "hg": 4,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 0
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 2,
             "ag": 2
           }
         ]
@@ -470,6 +562,10 @@
         "GW2": {
           "firstTeam": "Tottenham",
           "firstScorer": "Richarlieson"
+        },
+        "GW3": {
+          "firstTeam": "Arsenal",
+          "firstScorer": "Saka"
         }
       }
     },
@@ -477,7 +573,8 @@
       "name": "Zandermc",
       "bankers": {
         "GW1": 6,
-        "GW2": 6
+        "GW2": 6,
+        "GW3": 3
       },
       "jokers": [
         "GW2"
@@ -566,12 +663,58 @@
             "hg": 1,
             "ag": 3
           }
+        ],
+        "GW3": [
+          {
+            "hg": 1,
+            "ag": 3
+          },
+          {
+            "hg": 3,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 2
+          },
+          {
+            "hg": 4,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 2
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          }
         ]
       },
       "bonus": {
         "GW2": {
           "firstTeam": "Newcastle",
           "firstScorer": "Elanga"
+        },
+        "GW3": {
+          "firstTeam": "Arsenal",
+          "firstScorer": "Havertz"
         }
       }
     },
@@ -579,7 +722,8 @@
       "name": "Juice",
       "bankers": {
         "GW1": 6,
-        "GW2": 9
+        "GW2": 9,
+        "GW3": 3
       },
       "jokers": [
         "GW1"
@@ -668,12 +812,58 @@
             "hg": 0,
             "ag": 3
           }
+        ],
+        "GW3": [
+          {
+            "hg": 1,
+            "ag": 3
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 3,
+            "ag": 0
+          },
+          {
+            "hg": 3,
+            "ag": 1
+          },
+          {
+            "hg": 4,
+            "ag": 0
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 3
+          },
+          {
+            "hg": 2,
+            "ag": 2
+          }
         ]
       },
       "bonus": {
         "GW2": {
           "firstTeam": "Tottenham",
           "firstScorer": "Richarlison"
+        },
+        "GW3": {
+          "firstTeam": "Chelsea",
+          "firstScorer": "Palmer"
         }
       }
     },
@@ -681,7 +871,8 @@
       "name": "Nature Boy",
       "bankers": {
         "GW1": 6,
-        "GW2": 8
+        "GW2": 8,
+        "GW3": 3
       },
       "jokers": [],
       "picks": {
@@ -768,12 +959,58 @@
             "hg": 1,
             "ag": 4
           }
+        ],
+        "GW3": [
+          {
+            "hg": 1,
+            "ag": 3
+          },
+          {
+            "hg": 2,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 5,
+            "ag": 0
+          },
+          {
+            "hg": 4,
+            "ag": 0
+          },
+          {
+            "hg": 3,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 0
+          },
+          {
+            "hg": 2,
+            "ag": 4
+          },
+          {
+            "hg": 1,
+            "ag": 0
+          }
         ]
       },
       "bonus": {
         "GW2": {
           "firstTeam": "Newcastle",
           "firstScorer": "Harvey Barnes"
+        },
+        "GW3": {
+          "firstTeam": "Arsenal",
+          "firstScorer": "Odegaard"
         }
       }
     },
@@ -781,7 +1018,8 @@
       "name": "Dutch",
       "bankers": {
         "GW1": 0,
-        "GW2": 9
+        "GW2": 9,
+        "GW3": 0
       },
       "jokers": [],
       "picks": {
@@ -868,12 +1106,58 @@
             "hg": 1,
             "ag": 3
           }
+        ],
+        "GW3": [
+          {
+            "hg": 1,
+            "ag": 3
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 3,
+            "ag": 0
+          },
+          {
+            "hg": 1,
+            "ag": 0
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 0,
+            "ag": 2
+          },
+          {
+            "hg": 0,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 3
+          },
+          {
+            "hg": 3,
+            "ag": 2
+          }
         ]
       },
       "bonus": {
         "GW2": {
           "firstTeam": "Tottenham",
           "firstScorer": "Moore"
+        },
+        "GW3": {
+          "firstTeam": "Arsenal",
+          "firstScorer": "Havertz"
         }
       }
     },
@@ -983,7 +1267,8 @@
       "name": "Cowan",
       "bankers": {
         "GW1": 0,
-        "GW2": 4
+        "GW2": 4,
+        "GW3": 0
       },
       "jokers": [],
       "picks": {
@@ -1070,12 +1355,58 @@
             "hg": 0,
             "ag": 3
           }
+        ],
+        "GW3": [
+          {
+            "hg": 0,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 0,
+            "ag": 3
+          },
+          {
+            "hg": 6,
+            "ag": 0
+          },
+          {
+            "hg": 2,
+            "ag": 2
+          },
+          {
+            "hg": 0,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 0
+          },
+          {
+            "hg": 0,
+            "ag": 0
+          },
+          {
+            "hg": 0,
+            "ag": 2
+          },
+          {
+            "hg": 0,
+            "ag": 2
+          }
         ]
       },
       "bonus": {
         "GW2": {
           "firstTeam": "Tottenham",
           "firstScorer": "Marmoush"
+        },
+        "GW3": {
+          "firstTeam": "Chelsea",
+          "firstScorer": "Pedro"
         }
       }
     }
