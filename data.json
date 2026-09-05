@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-05 16:33 UTC",
+  "lastUpdated": "2026-09-05 18:47 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -243,9 +243,9 @@
         {
           "home": "Hull City",
           "away": "Aston Villa",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 0,
+          "ag": 0,
+          "played": true,
           "kickoff": "2026-09-05T16:30:00Z"
         },
         {
