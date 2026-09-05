@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-05 10:12 UTC",
+  "lastUpdated": "2026-09-05 12:22 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -1165,7 +1165,8 @@
       "name": "Colin",
       "bankers": {
         "GW1": 1,
-        "GW2": 4
+        "GW2": 4,
+        "GW3": 3
       },
       "jokers": [
         "GW1"
@@ -1254,12 +1255,55 @@
             "hg": 0,
             "ag": 3
           }
+        ],
+        "GW3": [
+          null,
+          {
+            "hg": 2,
+            "ag": 0
+          },
+          {
+            "hg": 1,
+            "ag": 0
+          },
+          {
+            "hg": 5,
+            "ag": 0
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 0
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 0,
+            "ag": 2
+          },
+          {
+            "hg": 2,
+            "ag": 2
+          }
         ]
       },
       "bonus": {
         "GW2": {
           "firstTeam": "Tottenham",
           "firstScorer": "Moore"
+        },
+        "GW3": {
+          "firstTeam": "Chelsea",
+          "firstScorer": "Palmer"
         }
       }
     },
