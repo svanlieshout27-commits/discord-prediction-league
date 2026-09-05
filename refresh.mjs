@@ -133,6 +133,34 @@ for(const rd of cfg.rounds){
     featuredResult: rd.featuredResult || null
   });
 
+  // ---- manual entries (e.g. a late entry pasted by hand) --------------------
+  // config:  "manual": { "PlayerName": {
+  //            "picks": { "Home v Away": "2-1", ... },   // omit a fixture to void it (scores 0)
+  //            "banker": "Home v Away", "joker": false,
+  //            "firstTeam": "", "firstScorer": "" } }
+  if(rd.manual){
+    for(const [rawName, entry] of Object.entries(rd.manual)){
+      const mname=canonName(rawName), mnorm=mname.toLowerCase();
+      if(!players.has(mnorm)) players.set(mnorm,{ name:mname, bankers:{}, jokers:[], picks:{}, bonus:{} });
+      const mp=players.get(mnorm); mp.name=mname;
+      const pk=entry.picks||{};
+      mp.picks[rd.id]=fixtures.map(f=>{
+        let v=pk[`${f.home} v ${f.away}`];
+        if(v==null){ const k=Object.keys(pk).find(k=>k.toLowerCase().startsWith(f.home.toLowerCase())); v=k?pk[k]:null; }
+        const m=typeof v==="string" && v.match(/^\s*(\d+)\s*-\s*(\d+)\s*$/);
+        return m ? { hg:+m[1], ag:+m[2] } : null;     // omitted/blank = null = scores 0
+      });
+      if(entry.banker){
+        let bi=fixtures.findIndex(f=>`${f.home} v ${f.away}`===entry.banker);
+        if(bi<0) bi=fixtures.findIndex(f=>entry.banker.toLowerCase().startsWith(f.home.toLowerCase()));
+        if(bi>=0) mp.bankers[rd.id]=bi;
+      }
+      if(entry.joker && !mp.jokers.includes(rd.id)) mp.jokers.push(rd.id);
+      if(featured && (entry.firstTeam || entry.firstScorer))
+        mp.bonus[rd.id]={ firstTeam:entry.firstTeam||"", firstScorer:entry.firstScorer||"" };
+    }
+  }
+
   const csv = await fetchCSV(rd.csvUrl);
   if(!csv || csv.length<2) continue;              // no responses yet
   const header = csv[0];
@@ -158,6 +186,16 @@ for(const rd of cfg.rounds){
 
     const g = v => { const n=parseInt(String(v).replace("+",""),10); return isNaN(n)?0:n; };
     p.picks[rd.id] = cols.map(c=>({ hg:g(row[c.h]), ag:g(row[c.a]) }));
+
+    // void specific fixtures for a late/partial entry — those picks score 0
+    // config:  "void": { "PlayerName": ["Home v Away", ...] }
+    if(rd.void && rd.void[name]){
+      for(const vstr of rd.void[name]){
+        let vi=fixtures.findIndex(f=>`${f.home} v ${f.away}`===vstr);
+        if(vi<0) vi=fixtures.findIndex(f=>vstr.toLowerCase().startsWith(f.home.toLowerCase()));
+        if(vi>=0) p.picks[rd.id][vi]=null;
+      }
+    }
 
     if(iBanker>=0){
       const bval=(row[iBanker]||"").trim();
