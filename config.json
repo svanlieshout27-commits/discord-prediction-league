@@ -1,11 +1,22 @@
 {
   "season": 2026,
   "rounds": [
-    { "id": "GW1", "label": "Gameweek 1", "matchday": 1, "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQsKB7NlIDm-tpyl61E2LgcqMvcEpunJxLqY75sYNkDD25fL2BgH2EVCmkzmC9WfhsOfiLrr-rnJS12/pub?output=csv" },
-    { "id": "GW2", "label": "Gameweek 2", "matchday": 2,
+    {
+      "id": "GW1",
+      "label": "Gameweek 1",
+      "matchday": 1,
+      "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQsKB7NlIDm-tpyl61E2LgcqMvcEpunJxLqY75sYNkDD25fL2BgH2EVCmkzmC9WfhsOfiLrr-rnJS12/pub?output=csv"
+    },
+    {
+      "id": "GW2",
+      "label": "Gameweek 2",
+      "matchday": 2,
       "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQbn3-QGYXqWYnaBFPIbUZbVaUVK4wKA1Kd2qPd9bHc2b0qDTSoSRIH4CIv_2fXFmhy-Sqm96UKyB9S/pub?output=csv",
       "featured": "Tottenham v Newcastle",
-      "featuredResult": { "firstTeam": "Newcastle", "firstScorer": "Elanga" },
+      "featuredResult": {
+        "firstTeam": "Newcastle",
+        "firstScorer": "Elanga"
+      },
       "results": {
         "Crystal Palace v Man City": "1-4",
         "Liverpool v Nottingham": "2-2",
@@ -15,9 +26,35 @@
         "Aston Villa v Arsenal": "0-1"
       }
     },
-    { "id": "GW3", "label": "Gameweek 3", "matchday": 3,
+    {
+      "id": "GW3",
+      "label": "Gameweek 3",
+      "matchday": 3,
       "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vShtl0cM8wL0Vs7WZRJYVDd6oY5prOdlgM-ZJkLQgc-Dqnzr6WNNls5Ojk2vTLi0UdEHvZcNTDqaMmh/pub?output=csv",
       "featured": "Arsenal v Chelsea",
-      "featuredResult": { "firstTeam": "", "firstScorer": "" } }
+      "featuredResult": {
+        "firstTeam": "",
+        "firstScorer": ""
+      },
+      "manual": {
+        "Colin": {
+          "picks": {
+            "Newcastle v Bournemouth": "2-0",
+            "Brentford v Sunderland": "1-1",
+            "Brighton Hove v Leeds United": "2-1",
+            "Fulham v Crystal Palace": "2-0",
+            "Man City v Coventry City": "5-0",
+            "Nottingham v Tottenham": "1-0",
+            "Hull City v Aston Villa": "1-2",
+            "Everton v Man United": "0-2",
+            "Arsenal v Chelsea": "2-2"
+          },
+          "banker": "Man City v Coventry City",
+          "joker": false,
+          "firstTeam": "Chelsea",
+          "firstScorer": "Palmer"
+        }
+      }
+    }
   ]
 }
