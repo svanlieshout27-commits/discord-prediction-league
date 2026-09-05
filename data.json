@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-05 12:22 UTC",
+  "lastUpdated": "2026-09-05 13:40 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -195,9 +195,9 @@
         {
           "home": "Newcastle",
           "away": "Bournemouth",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 2,
+          "ag": 2,
+          "played": true,
           "kickoff": "2026-09-05T11:30:00Z"
         },
         {
