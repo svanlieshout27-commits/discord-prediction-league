@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-06 13:56 UTC",
+  "lastUpdated": "2026-09-06 16:44 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -251,9 +251,9 @@
         {
           "home": "Everton",
           "away": "Man United",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 2,
+          "ag": 2,
+          "played": true,
           "kickoff": "2026-09-06T13:00:00Z"
         },
         {
