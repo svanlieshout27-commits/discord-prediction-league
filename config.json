@@ -33,8 +33,8 @@
       "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vShtl0cM8wL0Vs7WZRJYVDd6oY5prOdlgM-ZJkLQgc-Dqnzr6WNNls5Ojk2vTLi0UdEHvZcNTDqaMmh/pub?output=csv",
       "featured": "Arsenal v Chelsea",
       "featuredResult": {
-        "firstTeam": "",
-        "firstScorer": ""
+        "firstTeam": "Chelsea",
+        "firstScorer": "Morgan Rogers"
       },
       "manual": {
         "Colin": {
@@ -54,6 +54,9 @@
           "firstTeam": "Chelsea",
           "firstScorer": "Palmer"
         }
+      },
+      "results": {
+        "Arsenal v Chelsea": "2-1"
       }
     }
   ]
