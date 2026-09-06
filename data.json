@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-06 16:44 UTC",
+  "lastUpdated": "2026-09-06 18:16 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -259,16 +259,16 @@
         {
           "home": "Arsenal",
           "away": "Chelsea",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 2,
+          "ag": 1,
+          "played": true,
           "kickoff": "2026-09-06T15:30:00Z"
         }
       ],
       "featured": "Arsenal v Chelsea",
       "featuredResult": {
-        "firstTeam": "",
-        "firstScorer": ""
+        "firstTeam": "Chelsea",
+        "firstScorer": "Morgan Rogers"
       }
     }
   ],
