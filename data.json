@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-12 18:57 UTC",
+  "lastUpdated": "2026-09-12 21:20 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -326,9 +326,9 @@
         {
           "home": "Sunderland",
           "away": "Arsenal",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 0,
+          "ag": 2,
+          "played": true,
           "kickoff": "2026-09-12T19:00:00Z"
         },
         {
