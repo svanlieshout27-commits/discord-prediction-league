@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-13 14:48 UTC",
+  "lastUpdated": "2026-09-13 17:39 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -334,17 +334,17 @@
         {
           "home": "Coventry City",
           "away": "Brighton Hove",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 0,
+          "ag": 5,
+          "played": true,
           "kickoff": "2026-09-13T13:00:00Z"
         },
         {
           "home": "Man United",
           "away": "Man City",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 0,
+          "ag": 1,
+          "played": true,
           "kickoff": "2026-09-13T15:30:00Z"
         },
         {
@@ -358,8 +358,8 @@
       ],
       "featured": "Man United v Man City",
       "featuredResult": {
-        "firstTeam": "",
-        "firstScorer": ""
+        "firstTeam": "Man City",
+        "firstScorer": "Haaland"
       }
     }
   ],
