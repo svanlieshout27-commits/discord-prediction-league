@@ -66,8 +66,11 @@
       "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSF5bMHjn5h831FCn8A1MMzhfWHeNsTNuvb4E8X14tcAtB7Jjh0HFetl9b07TSbd10qjMp5SCo4s1Jh/pub?output=csv",
       "featured": "Man United v Man City",
       "featuredResult": {
-        "firstTeam": "",
-        "firstScorer": ""
+        "firstTeam": "Man City",
+        "firstScorer": "Haaland"
+      },
+      "results": {
+        "Man United v Man City": "0-1"
       }
     }
   ]
