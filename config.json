@@ -72,6 +72,12 @@
       "results": {
         "Man United v Man City": "0-1"
       }
+    },
+    {
+      "id": "GW5",
+      "label": "Gameweek 5",
+      "matchday": 5,
+      "csvUrl": "PASTE_YOUR_GW5_CSV_LINK"
     }
   ]
 }
