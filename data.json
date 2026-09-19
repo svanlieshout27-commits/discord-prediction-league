@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-19 17:21 UTC",
+  "lastUpdated": "2026-09-19 19:28 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -409,9 +409,9 @@
         {
           "home": "Nottingham",
           "away": "Coventry City",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 0,
+          "ag": 1,
+          "played": true,
           "kickoff": "2026-09-19T16:30:00Z"
         },
         {
