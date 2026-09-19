@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-19 14:15 UTC",
+  "lastUpdated": "2026-09-19 17:21 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -385,25 +385,25 @@
         {
           "home": "Everton",
           "away": "Ipswich Town",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 1,
+          "ag": 0,
+          "played": true,
           "kickoff": "2026-09-19T14:00:00Z"
         },
         {
           "home": "Brighton Hove",
           "away": "Arsenal",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 3,
+          "ag": 0,
+          "played": true,
           "kickoff": "2026-09-19T14:00:00Z"
         },
         {
           "home": "Newcastle",
           "away": "Hull City",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 2,
+          "ag": 1,
+          "played": true,
           "kickoff": "2026-09-19T14:00:00Z"
         },
         {
