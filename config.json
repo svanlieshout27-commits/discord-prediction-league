@@ -81,6 +81,11 @@
       "void": {
         "Nature Boy": ["Brentford v Chelsea"],
         "Colin": ["Brentford v Chelsea"]
+      },
+      "results": {
+        "Man City v Sunderland": "5-3",
+        "Leeds United v Crystal Palace": "0-0",
+        "Bournemouth v Liverpool": "0-1"
       }
     }
   ]
