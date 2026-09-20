@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-20 14:30 UTC",
+  "lastUpdated": "2026-09-20 15:41 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -417,25 +417,25 @@
         {
           "home": "Bournemouth",
           "away": "Liverpool",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 0,
+          "ag": 1,
+          "played": true,
           "kickoff": "2026-09-20T13:00:00Z"
         },
         {
           "home": "Leeds United",
           "away": "Crystal Palace",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 0,
+          "ag": 0,
+          "played": true,
           "kickoff": "2026-09-20T13:00:00Z"
         },
         {
           "home": "Man City",
           "away": "Sunderland",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 5,
+          "ag": 3,
+          "played": true,
           "kickoff": "2026-09-20T13:00:00Z"
         },
         {
