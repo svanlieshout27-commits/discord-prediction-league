@@ -87,6 +87,14 @@
         "Leeds United v Crystal Palace": "0-0",
         "Bournemouth v Liverpool": "0-1"
       }
+    },
+    {
+      "id": "GW6",
+      "label": "Gameweek 6",
+      "matchday": 6,
+      "csvUrl": "PASTE_YOUR_GW6_CSV_LINK",
+      "featured": "Liverpool v Man City",
+      "featuredResult": { "firstTeam": "", "firstScorer": "" }
     }
   ]
 }
