@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-10 12:07 UTC",
+  "lastUpdated": "2026-10-10 12:33 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -790,7 +790,8 @@
         "GW2": 1,
         "GW3": 9,
         "GW4": 5,
-        "GW5": 1
+        "GW5": 1,
+        "GW6": 0
       },
       "jokers": [],
       "picks": {
@@ -1003,6 +1004,48 @@
             "hg": 1,
             "ag": 1
           }
+        ],
+        "GW6": [
+          {
+            "hg": 3,
+            "ag": 1
+          },
+          {
+            "hg": 0,
+            "ag": 2
+          },
+          {
+            "hg": 3,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 0
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          }
         ]
       },
       "bonus": {
@@ -1017,6 +1060,10 @@
         "GW4": {
           "firstTeam": "Man City",
           "firstScorer": "Haaland"
+        },
+        "GW6": {
+          "firstTeam": "",
+          "firstScorer": "Haaland"
         }
       }
     },
@@ -1027,7 +1074,8 @@
         "GW2": 6,
         "GW3": 3,
         "GW4": 6,
-        "GW5": 8
+        "GW5": 8,
+        "GW6": 8
       },
       "jokers": [
         "GW2"
@@ -1242,6 +1290,48 @@
             "hg": 1,
             "ag": 1
           }
+        ],
+        "GW6": [
+          {
+            "hg": 3,
+            "ag": 1
+          },
+          {
+            "hg": 0,
+            "ag": 2
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 0
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 3,
+            "ag": 1
+          },
+          {
+            "hg": 0,
+            "ag": 2
+          }
         ]
       },
       "bonus": {
@@ -1256,6 +1346,10 @@
         "GW4": {
           "firstTeam": "Man City",
           "firstScorer": "Haaland"
+        },
+        "GW6": {
+          "firstTeam": "Liverpool",
+          "firstScorer": "Isak"
         }
       }
     },
@@ -1266,7 +1360,8 @@
         "GW2": 9,
         "GW3": 3,
         "GW4": 5,
-        "GW5": 1
+        "GW5": 1,
+        "GW6": 8
       },
       "jokers": [
         "GW1"
@@ -1481,6 +1576,48 @@
             "hg": 0,
             "ag": 2
           }
+        ],
+        "GW6": [
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 3,
+            "ag": 2
+          },
+          {
+            "hg": 2,
+            "ag": 0
+          },
+          {
+            "hg": 2,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 0
+          },
+          {
+            "hg": 0,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          }
         ]
       },
       "bonus": {
@@ -1495,6 +1632,10 @@
         "GW4": {
           "firstTeam": "Man City",
           "firstScorer": "Fernandes"
+        },
+        "GW6": {
+          "firstTeam": "Man City",
+          "firstScorer": "Haaland"
         }
       }
     },
@@ -1505,7 +1646,8 @@
         "GW2": 8,
         "GW3": 3,
         "GW4": 1,
-        "GW5": 1
+        "GW5": 1,
+        "GW6": 1
       },
       "jokers": [],
       "picks": {
@@ -1715,6 +1857,48 @@
             "hg": 3,
             "ag": 5
           }
+        ],
+        "GW6": [
+          {
+            "hg": 3,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 3
+          },
+          {
+            "hg": 2,
+            "ag": 2
+          },
+          {
+            "hg": 0,
+            "ag": 0
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 3,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 0
+          },
+          {
+            "hg": 0,
+            "ag": 0
+          },
+          {
+            "hg": 2,
+            "ag": 3
+          },
+          {
+            "hg": 1,
+            "ag": 4
+          }
         ]
       },
       "bonus": {
@@ -1729,6 +1913,10 @@
         "GW4": {
           "firstTeam": "Man City",
           "firstScorer": "Haaland"
+        },
+        "GW6": {
+          "firstTeam": "Man City",
+          "firstScorer": "Haaland"
         }
       }
     },
@@ -1739,7 +1927,8 @@
         "GW2": 9,
         "GW3": 0,
         "GW4": 1,
-        "GW5": 8
+        "GW5": 8,
+        "GW6": 0
       },
       "jokers": [],
       "picks": {
@@ -1952,6 +2141,48 @@
             "hg": 0,
             "ag": 2
           }
+        ],
+        "GW6": [
+          {
+            "hg": 2,
+            "ag": 0
+          },
+          {
+            "hg": 0,
+            "ag": 1
+          },
+          {
+            "hg": 3,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 0
+          },
+          {
+            "hg": 0,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 0,
+            "ag": 2
+          }
         ]
       },
       "bonus": {
@@ -1966,6 +2197,10 @@
         "GW4": {
           "firstTeam": "Man City",
           "firstScorer": "Haaland"
+        },
+        "GW6": {
+          "firstTeam": "Man City",
+          "firstScorer": "Haaland"
         }
       }
     },
@@ -1976,7 +2211,8 @@
         "GW2": 4,
         "GW3": 3,
         "GW4": 8,
-        "GW5": 4
+        "GW5": 4,
+        "GW6": 5
       },
       "jokers": [
         "GW1"
@@ -2185,6 +2421,48 @@
             "hg": 0,
             "ag": 2
           }
+        ],
+        "GW6": [
+          {
+            "hg": 2,
+            "ag": 0
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 3,
+            "ag": 0
+          },
+          {
+            "hg": 0,
+            "ag": 1
+          },
+          {
+            "hg": 0,
+            "ag": 2
+          },
+          {
+            "hg": 3,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 0,
+            "ag": 3
+          }
         ]
       },
       "bonus": {
@@ -2199,6 +2477,10 @@
         "GW4": {
           "firstTeam": "Man City",
           "firstScorer": "Haaland"
+        },
+        "GW6": {
+          "firstTeam": "Man City",
+          "firstScorer": "Haaland"
         }
       }
     },
@@ -2208,9 +2490,12 @@
         "GW1": 0,
         "GW2": 4,
         "GW3": 0,
-        "GW4": 2
+        "GW4": 2,
+        "GW6": 2
       },
-      "jokers": [],
+      "jokers": [
+        "GW6"
+      ],
       "picks": {
         "GW1": [
           {
@@ -2379,6 +2664,48 @@
             "hg": 1,
             "ag": 1
           }
+        ],
+        "GW6": [
+          {
+            "hg": 3,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 3
+          },
+          {
+            "hg": 3,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 0
+          },
+          {
+            "hg": 0,
+            "ag": 2
+          },
+          {
+            "hg": 0,
+            "ag": 0
+          },
+          {
+            "hg": 0,
+            "ag": 1
+          }
         ]
       },
       "bonus": {
@@ -2393,6 +2720,10 @@
         "GW4": {
           "firstTeam": "Man United",
           "firstScorer": "Mbuemo"
+        },
+        "GW6": {
+          "firstTeam": "No goals",
+          "firstScorer": "Signoris ashes"
         }
       }
     }
