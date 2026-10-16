@@ -79,7 +79,8 @@ const JOKER_COL  = "Play your JOKER this week? (doubles your WHOLE coupon — li
    Key = the typed name (any casing), value = the canonical name to keep.     */
 const ALIASES = {
   "an": "Cowan",
-  "atcolin": "Colin"
+  "atcolin": "Colin",
+  "signori": "Gazman"
 };
 function canonName(raw){
   const t = (raw||"").trim();
