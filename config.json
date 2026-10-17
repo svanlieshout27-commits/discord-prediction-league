@@ -98,6 +98,12 @@
       "results": {
         "Liverpool v Man City": "0-3"
       }
+    },
+    {
+      "id": "GW7",
+      "label": "Gameweek 7",
+      "matchday": 7,
+      "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vT6-W-5WOfYIrEgRJPfxOTVuf8aLIOy7GZkCbN6irU2sTT5v1p-bv5QyLmry8mUN-LfYM2KPnkZ1heL/pub?output=csv"
     }
   ]
 }
