@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-17 10:20 UTC",
+  "lastUpdated": "2026-10-17 11:36 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -540,6 +540,94 @@
         "firstTeam": "Man City",
         "firstScorer": "Haaland"
       }
+    },
+    {
+      "id": "GW7",
+      "label": "Gameweek 7",
+      "fixtures": [
+        {
+          "home": "Everton",
+          "away": "Chelsea",
+          "hg": null,
+          "ag": null,
+          "played": false,
+          "kickoff": "2026-10-17T11:30:00Z"
+        },
+        {
+          "home": "Fulham",
+          "away": "Hull City",
+          "hg": null,
+          "ag": null,
+          "played": false,
+          "kickoff": "2026-10-17T14:00:00Z"
+        },
+        {
+          "home": "Man City",
+          "away": "Ipswich Town",
+          "hg": null,
+          "ag": null,
+          "played": false,
+          "kickoff": "2026-10-17T14:00:00Z"
+        },
+        {
+          "home": "Brentford",
+          "away": "Liverpool",
+          "hg": null,
+          "ag": null,
+          "played": false,
+          "kickoff": "2026-10-17T14:00:00Z"
+        },
+        {
+          "home": "Newcastle",
+          "away": "Aston Villa",
+          "hg": null,
+          "ag": null,
+          "played": false,
+          "kickoff": "2026-10-17T16:30:00Z"
+        },
+        {
+          "home": "Bournemouth",
+          "away": "Sunderland",
+          "hg": null,
+          "ag": null,
+          "played": false,
+          "kickoff": "2026-10-18T13:00:00Z"
+        },
+        {
+          "home": "Leeds United",
+          "away": "Man United",
+          "hg": null,
+          "ag": null,
+          "played": false,
+          "kickoff": "2026-10-18T13:00:00Z"
+        },
+        {
+          "home": "Brighton Hove",
+          "away": "Crystal Palace",
+          "hg": null,
+          "ag": null,
+          "played": false,
+          "kickoff": "2026-10-18T13:00:00Z"
+        },
+        {
+          "home": "Nottingham",
+          "away": "Arsenal",
+          "hg": null,
+          "ag": null,
+          "played": false,
+          "kickoff": "2026-10-18T15:30:00Z"
+        },
+        {
+          "home": "Tottenham",
+          "away": "Coventry City",
+          "hg": null,
+          "ag": null,
+          "played": false,
+          "kickoff": "2026-10-19T19:00:00Z"
+        }
+      ],
+      "featured": null,
+      "featuredResult": null
     }
   ],
   "predictions": [
@@ -550,7 +638,8 @@
         "GW2": 9,
         "GW3": 0,
         "GW4": 6,
-        "GW5": 1
+        "GW5": 1,
+        "GW7": 2
       },
       "jokers": [
         "GW3",
@@ -766,6 +855,48 @@
             "hg": 1,
             "ag": 3
           }
+        ],
+        "GW7": [
+          {
+            "hg": 1,
+            "ag": 3
+          },
+          {
+            "hg": 2,
+            "ag": 0
+          },
+          {
+            "hg": 4,
+            "ag": 0
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 0,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 3,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 3
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          }
         ]
       },
       "bonus": {
@@ -791,7 +922,8 @@
         "GW3": 9,
         "GW4": 5,
         "GW5": 1,
-        "GW6": 0
+        "GW6": 0,
+        "GW7": 7
       },
       "jokers": [],
       "picks": {
@@ -1046,6 +1178,48 @@
             "hg": 1,
             "ag": 1
           }
+        ],
+        "GW7": [
+          {
+            "hg": 1,
+            "ag": 3
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 4,
+            "ag": 0
+          },
+          {
+            "hg": 2,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 0
+          },
+          {
+            "hg": 0,
+            "ag": 3
+          },
+          {
+            "hg": 1,
+            "ag": 0
+          }
         ]
       },
       "bonus": {
@@ -1075,7 +1249,8 @@
         "GW3": 3,
         "GW4": 6,
         "GW5": 8,
-        "GW6": 8
+        "GW6": 8,
+        "GW7": 2
       },
       "jokers": [
         "GW2"
@@ -1332,6 +1507,48 @@
             "hg": 0,
             "ag": 2
           }
+        ],
+        "GW7": [
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 0,
+            "ag": 2
+          },
+          {
+            "hg": 3,
+            "ag": 0
+          },
+          {
+            "hg": 0,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 3,
+            "ag": 1
+          },
+          {
+            "hg": 0,
+            "ag": 3
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          }
         ]
       },
       "bonus": {
@@ -1361,7 +1578,8 @@
         "GW3": 3,
         "GW4": 5,
         "GW5": 1,
-        "GW6": 8
+        "GW6": 8,
+        "GW7": 2
       },
       "jokers": [
         "GW1"
@@ -1618,6 +1836,48 @@
             "hg": 1,
             "ag": 1
           }
+        ],
+        "GW7": [
+          {
+            "hg": 1,
+            "ag": 3
+          },
+          {
+            "hg": 0,
+            "ag": 2
+          },
+          {
+            "hg": 3,
+            "ag": 0
+          },
+          {
+            "hg": 2,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 0,
+            "ag": 3
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          }
         ]
       },
       "bonus": {
@@ -1647,7 +1907,8 @@
         "GW3": 3,
         "GW4": 1,
         "GW5": 1,
-        "GW6": 1
+        "GW6": 1,
+        "GW7": 2
       },
       "jokers": [],
       "picks": {
@@ -1899,6 +2160,48 @@
             "hg": 1,
             "ag": 4
           }
+        ],
+        "GW7": [
+          {
+            "hg": 2,
+            "ag": 5
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 6,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 0
+          },
+          {
+            "hg": 1,
+            "ag": 3
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 2
+          },
+          {
+            "hg": 3,
+            "ag": 2
+          },
+          {
+            "hg": 0,
+            "ag": 2
+          },
+          {
+            "hg": 2,
+            "ag": 0
+          }
         ]
       },
       "bonus": {
@@ -1928,7 +2231,8 @@
         "GW3": 0,
         "GW4": 1,
         "GW5": 8,
-        "GW6": 0
+        "GW6": 0,
+        "GW7": 2
       },
       "jokers": [],
       "picks": {
@@ -2183,6 +2487,48 @@
             "hg": 0,
             "ag": 2
           }
+        ],
+        "GW7": [
+          {
+            "hg": 1,
+            "ag": 3
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 3,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 3
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 0,
+            "ag": 2
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 1,
+            "ag": 3
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          }
         ]
       },
       "bonus": {
@@ -2212,10 +2558,12 @@
         "GW3": 3,
         "GW4": 8,
         "GW5": 4,
-        "GW6": 5
+        "GW6": 5,
+        "GW7": 2
       },
       "jokers": [
-        "GW1"
+        "GW1",
+        "GW7"
       ],
       "picks": {
         "GW1": [
@@ -2463,6 +2811,48 @@
             "hg": 0,
             "ag": 3
           }
+        ],
+        "GW7": [
+          {
+            "hg": 0,
+            "ag": 2
+          },
+          {
+            "hg": 2,
+            "ag": 0
+          },
+          {
+            "hg": 4,
+            "ag": 0
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 1,
+            "ag": 0
+          },
+          {
+            "hg": 2,
+            "ag": 0
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 3,
+            "ag": 0
+          },
+          {
+            "hg": 1,
+            "ag": 3
+          },
+          {
+            "hg": 2,
+            "ag": 0
+          }
         ]
       },
       "bonus": {
@@ -2491,10 +2881,12 @@
         "GW2": 4,
         "GW3": 0,
         "GW4": 2,
-        "GW6": 2
+        "GW6": 2,
+        "GW7": 0
       },
       "jokers": [
-        "GW6"
+        "GW6",
+        "GW7"
       ],
       "picks": {
         "GW1": [
@@ -2705,6 +3097,48 @@
           {
             "hg": 0,
             "ag": 1
+          }
+        ],
+        "GW7": [
+          {
+            "hg": 0,
+            "ag": 3
+          },
+          {
+            "hg": 1,
+            "ag": 1
+          },
+          {
+            "hg": 6,
+            "ag": 0
+          },
+          {
+            "hg": 1,
+            "ag": 3
+          },
+          {
+            "hg": 1,
+            "ag": 2
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 3
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 0,
+            "ag": 4
+          },
+          {
+            "hg": 1,
+            "ag": 0
           }
         ]
       },
