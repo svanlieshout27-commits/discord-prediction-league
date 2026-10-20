@@ -105,8 +105,21 @@
       "matchday": 7,
       "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vT6-W-5WOfYIrEgRJPfxOTVuf8aLIOy7GZkCbN6irU2sTT5v1p-bv5QyLmry8mUN-LfYM2KPnkZ1heL/pub?output=csv",
       "results": {
-        "Newcastle v Aston Villa": "0-1"
+        "Newcastle v Aston Villa": "0-1",
+        "Bournemouth v Sunderland": "2-0",
+        "Brighton Hove v Crystal Palace": "5-0",
+        "Leeds United v Man United": "1-1",
+        "Nottingham v Arsenal": "0-1",
+        "Tottenham v Coventry City": "3-1"
       }
+    },
+    {
+      "id": "GW8",
+      "label": "Gameweek 8",
+      "matchday": 8,
+      "csvUrl": "PASTE_YOUR_GW8_CSV_LINK_HERE",
+      "featured": "Chelsea v Tottenham",
+      "featuredResult": { "firstTeam": "", "firstScorer": "" }
     }
   ]
 }
