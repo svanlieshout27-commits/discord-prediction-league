@@ -117,7 +117,7 @@
       "id": "GW8",
       "label": "Gameweek 8",
       "matchday": 8,
-      "csvUrl": "PASTE_YOUR_GW8_CSV_LINK_HERE",
+      "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRJnzeinn8hjHG-0I0oGu6Lhdgr5VvVOIaKo-3nZVfhNMoq4bjImvFXfFScRa_Bp0hCR8-Yo9T1Ij8Y/pub?output=csv",
       "featured": "Chelsea v Tottenham",
       "featuredResult": { "firstTeam": "", "firstScorer": "" }
     }
