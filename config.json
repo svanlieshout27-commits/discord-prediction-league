@@ -79,8 +79,12 @@
       "matchday": 5,
       "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTIGH_d3iU7CLMEgz1tyIbu_I9cuai-j3qBd3SFEzCe7qqCJe2lyfhGHnJRygR-AsgPufYS4pEP4YVK/pub?output=csv",
       "void": {
-        "Nature Boy": ["Brentford v Chelsea"],
-        "Colin": ["Brentford v Chelsea"]
+        "Nature Boy": [
+          "Brentford v Chelsea"
+        ],
+        "Colin": [
+          "Brentford v Chelsea"
+        ]
       },
       "results": {
         "Man City v Sunderland": "5-3",
@@ -94,7 +98,10 @@
       "matchday": 6,
       "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQJV_13QmXMT9HPNgYJlS0PedQ22XJaj2h4Z4ZB4H99dHhF_mpE1iAvv6pU6uSozdezlmIgu-K5fi3H/pub?output=csv",
       "featured": "Liverpool v Man City",
-      "featuredResult": { "firstTeam": "Man City", "firstScorer": "Haaland" },
+      "featuredResult": {
+        "firstTeam": "Man City",
+        "firstScorer": "Haaland"
+      },
       "results": {
         "Liverpool v Man City": "0-3"
       }
@@ -119,7 +126,15 @@
       "matchday": 8,
       "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRJnzeinn8hjHG-0I0oGu6Lhdgr5VvVOIaKo-3nZVfhNMoq4bjImvFXfFScRa_Bp0hCR8-Yo9T1Ij8Y/pub?output=csv",
       "featured": "Chelsea v Tottenham",
-      "featuredResult": { "firstTeam": "", "firstScorer": "" }
+      "featuredResult": {
+        "firstTeam": "",
+        "firstScorer": ""
+      },
+      "results": {
+        "Arsenal v Everton": "2-0",
+        "Aston Villa v Man City": "2-1",
+        "Coventry City v Fulham": "0-1"
+      }
     }
   ]
 }
