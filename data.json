@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-25 10:58 UTC",
+  "lastUpdated": "2026-10-25 14:49 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -668,9 +668,9 @@
         {
           "home": "Chelsea",
           "away": "Tottenham",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 0,
+          "ag": 2,
+          "played": true,
           "kickoff": "2026-10-24T16:30:00Z"
         },
         {
