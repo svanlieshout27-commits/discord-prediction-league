@@ -127,13 +127,20 @@
       "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRJnzeinn8hjHG-0I0oGu6Lhdgr5VvVOIaKo-3nZVfhNMoq4bjImvFXfFScRa_Bp0hCR8-Yo9T1Ij8Y/pub?output=csv",
       "featured": "Chelsea v Tottenham",
       "featuredResult": {
-        "firstTeam": "",
-        "firstScorer": ""
+        "firstTeam": "Tottenham",
+        "firstScorer": "Mathys Tel"
       },
       "results": {
         "Arsenal v Everton": "2-0",
         "Aston Villa v Man City": "2-1",
-        "Coventry City v Fulham": "0-1"
+        "Coventry City v Fulham": "0-1",
+        "Chelsea v Tottenham": "0-2",
+        "Ipswich Town v Nottingham": "1-1",
+        "Crystal Palace v Newcastle": "0-2",
+        "Hull City v Brentford": "1-1",
+        "Liverpool v Brighton Hove": "2-0",
+        "Man United v Bournemouth": "0-3",
+        "Sunderland v Leeds United": "0-0"
       }
     }
   ]
