@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-25 18:09 UTC",
+  "lastUpdated": "2026-10-25 18:34 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -708,16 +708,16 @@
         {
           "home": "Sunderland",
           "away": "Leeds United",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 0,
+          "ag": 0,
+          "played": true,
           "kickoff": "2026-10-25T16:30:00Z"
         }
       ],
       "featured": "Chelsea v Tottenham",
       "featuredResult": {
-        "firstTeam": "",
-        "firstScorer": ""
+        "firstTeam": "Tottenham",
+        "firstScorer": "Mathys Tel"
       }
     }
   ],
