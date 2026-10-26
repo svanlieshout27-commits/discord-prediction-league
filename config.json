@@ -142,6 +142,17 @@
         "Man United v Bournemouth": "0-3",
         "Sunderland v Leeds United": "0-0"
       }
+    },
+    {
+      "id": "GW9",
+      "label": "Gameweek 9",
+      "matchday": 9,
+      "csvUrl": "PASTE_YOUR_GW9_CSV_LINK_HERE",
+      "featured": "Liverpool v Arsenal",
+      "featuredResult": {
+        "firstTeam": "",
+        "firstScorer": ""
+      }
     }
   ]
 }
