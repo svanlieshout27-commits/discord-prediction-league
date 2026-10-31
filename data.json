@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-31 15:57 UTC",
+  "lastUpdated": "2026-10-31 17:41 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -735,41 +735,41 @@
         {
           "home": "Man City",
           "away": "Brighton Hove",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 0,
+          "ag": 1,
+          "played": true,
           "kickoff": "2026-10-31T15:00:00Z"
         },
         {
           "home": "Bournemouth",
           "away": "Leeds United",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 2,
+          "ag": 0,
+          "played": true,
           "kickoff": "2026-10-31T15:00:00Z"
         },
         {
           "home": "Coventry City",
           "away": "Sunderland",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 3,
+          "ag": 1,
+          "played": true,
           "kickoff": "2026-10-31T15:00:00Z"
         },
         {
           "home": "Hull City",
           "away": "Ipswich Town",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 2,
+          "ag": 2,
+          "played": true,
           "kickoff": "2026-10-31T15:00:00Z"
         },
         {
           "home": "Brentford",
           "away": "Nottingham",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 2,
+          "ag": 0,
+          "played": true,
           "kickoff": "2026-10-31T15:00:00Z"
         },
         {
