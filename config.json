@@ -147,7 +147,7 @@
       "id": "GW9",
       "label": "Gameweek 9",
       "matchday": 9,
-      "csvUrl": "PASTE_YOUR_GW9_CSV_LINK_HERE",
+      "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRDdRYb4FViKFmdboxYopaRaL4D3-v6wezO6WaOclOmZ5jvmfrD_xxAHLJJfE1FD9yYe8Gk85k262dA/pub?output=csv",
       "featured": "Liverpool v Arsenal",
       "featuredResult": {
         "firstTeam": "",
