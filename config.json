@@ -152,6 +152,14 @@
       "featuredResult": {
         "firstTeam": "",
         "firstScorer": ""
+      },
+      "results": {
+        "Chelsea v Man United": "2-0",
+        "Coventry City v Sunderland": "3-1",
+        "Man City v Brighton Hove": "0-1",
+        "Bournemouth v Leeds United": "2-0",
+        "Hull City v Ipswich Town": "2-2",
+        "Brentford v Nottingham": "2-0"
       }
     }
   ]
