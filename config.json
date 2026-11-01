@@ -150,8 +150,8 @@
       "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRDdRYb4FViKFmdboxYopaRaL4D3-v6wezO6WaOclOmZ5jvmfrD_xxAHLJJfE1FD9yYe8Gk85k262dA/pub?output=csv",
       "featured": "Liverpool v Arsenal",
       "featuredResult": {
-        "firstTeam": "",
-        "firstScorer": ""
+        "firstTeam": "Arsenal",
+        "firstScorer": "Kai Havertz"
       },
       "results": {
         "Chelsea v Man United": "2-0",
@@ -159,7 +159,10 @@
         "Man City v Brighton Hove": "0-1",
         "Bournemouth v Leeds United": "2-0",
         "Hull City v Ipswich Town": "2-2",
-        "Brentford v Nottingham": "2-0"
+        "Brentford v Nottingham": "2-0",
+        "Tottenham v Crystal Palace": "2-0",
+        "Aston Villa v Fulham": "1-1",
+        "Liverpool v Arsenal": "0-1"
       }
     }
   ]
