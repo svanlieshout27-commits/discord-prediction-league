@@ -162,8 +162,15 @@
         "Brentford v Nottingham": "2-0",
         "Tottenham v Crystal Palace": "2-0",
         "Aston Villa v Fulham": "1-1",
-        "Liverpool v Arsenal": "0-1"
+        "Liverpool v Arsenal": "0-1",
+        "Newcastle v Everton": "0-1"
       }
+    },
+    {
+      "id": "GW10",
+      "label": "Gameweek 10",
+      "matchday": 10,
+      "csvUrl": "PASTE_YOUR_GW10_CSV_LINK_HERE"
     }
   ]
 }
