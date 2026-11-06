@@ -170,7 +170,7 @@
       "id": "GW10",
       "label": "Gameweek 10",
       "matchday": 10,
-      "csvUrl": "PASTE_YOUR_GW10_CSV_LINK_HERE"
+      "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTWRdTqoCQMy1BddP5B7l-PqRJNDr--gvn4cnpEDfnBsvAlB0Kz7DEvt5dX0XXFmLYhQkEUbdi6hWIE/pub?output=csv"
     }
   ]
 }
