@@ -47,12 +47,24 @@ function parseCSV(text){
   return rows.filter(r=>r.length>1 || (r.length===1 && r[0].trim()!==""));
 }
 
-async function fetchFixtures(matchday){
-  const url=`https://api.football-data.org/v4/competitions/PL/matches?matchday=${matchday}&season=${cfg.season}`;
+// Fetch the WHOLE season's matches in ONE request and cache them, then serve
+// each matchday from that cache. The free tier allows ~10 calls/minute, so
+// calling the API once per round breaks once you have 11+ rounds. One call for
+// the season keeps us well under the limit no matter how many gameweeks exist.
+let _allMatches = null;
+async function getAllMatches(){
+  if(_allMatches) return _allMatches;
+  const url=`https://api.football-data.org/v4/competitions/PL/matches?season=${cfg.season}`;
   const r=await fetch(url,{headers:{"X-Auth-Token":TOKEN}});
-  if(!r.ok) throw new Error("football-data "+r.status+" for matchday "+matchday);
+  if(!r.ok) throw new Error("football-data "+r.status+" (season matches)");
   const d=await r.json();
-  return d.matches
+  _allMatches = d.matches || [];
+  return _allMatches;
+}
+async function fetchFixtures(matchday){
+  const all = await getAllMatches();
+  return all
+    .filter(m=> m.matchday===matchday)
     .sort((a,b)=> a.utcDate.localeCompare(b.utcDate))
     .map(m=>{
       const home=m.homeTeam.shortName||m.homeTeam.name;
