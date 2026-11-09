@@ -183,6 +183,17 @@
         "Nottingham v Man City": "3-1",
         "Sunderland v Chelsea": "1-0"
       }
+    },
+    {
+      "id": "GW11",
+      "label": "Gameweek 11",
+      "matchday": 11,
+      "csvUrl": "PASTE_YOUR_GW11_CSV_LINK_HERE",
+      "featured": "Liverpool v Man United",
+      "featuredResult": {
+        "firstTeam": "",
+        "firstScorer": ""
+      }
     }
   ]
 }
