@@ -188,7 +188,7 @@
       "id": "GW11",
       "label": "Gameweek 11",
       "matchday": 11,
-      "csvUrl": "PASTE_YOUR_GW11_CSV_LINK_HERE",
+      "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQACsAIkMUfmgOYMJ0gn0CI-ITUQ9kUqXzXrGbZAH5DdtwXXKIYQ19PI-n57fHLxJaUmliZ0_-UpwBJ/pub?output=csv",
       "featured": "Liverpool v Man United",
       "featuredResult": {
         "firstTeam": "",
