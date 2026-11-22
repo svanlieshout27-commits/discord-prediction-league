@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-22 14:17 UTC",
+  "lastUpdated": "2026-11-22 17:20 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -962,9 +962,9 @@
         {
           "home": "Hull City",
           "away": "Brighton Hove",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 2,
+          "ag": 0,
+          "played": true,
           "kickoff": "2026-11-22T14:00:00Z"
         },
         {
@@ -986,8 +986,8 @@
       ],
       "featured": "Liverpool v Man United",
       "featuredResult": {
-        "firstTeam": "",
-        "firstScorer": ""
+        "firstTeam": "Liverpool",
+        "firstScorer": "Dominik Szoboszlai"
       }
     }
   ],
@@ -3387,10 +3387,7 @@
           }
         ],
         "GW11": [
-          {
-            "hg": 0,
-            "ag": 0
-          },
+          null,
           {
             "hg": 0,
             "ag": 0
