@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-21 22:47 UTC",
+  "lastUpdated": "2026-11-22 14:17 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -2964,7 +2964,8 @@
         "GW7": 2,
         "GW8": 2,
         "GW9": 2,
-        "GW10": 2
+        "GW10": 2,
+        "GW11": 7
       },
       "jokers": [],
       "picks": {
@@ -3384,6 +3385,48 @@
             "hg": 1,
             "ag": 4
           }
+        ],
+        "GW11": [
+          {
+            "hg": 0,
+            "ag": 0
+          },
+          {
+            "hg": 0,
+            "ag": 0
+          },
+          {
+            "hg": 0,
+            "ag": 0
+          },
+          {
+            "hg": 0,
+            "ag": 0
+          },
+          {
+            "hg": 0,
+            "ag": 0
+          },
+          {
+            "hg": 0,
+            "ag": 0
+          },
+          {
+            "hg": 0,
+            "ag": 0
+          },
+          {
+            "hg": 0,
+            "ag": 3
+          },
+          {
+            "hg": 2,
+            "ag": 1
+          },
+          {
+            "hg": 2,
+            "ag": 0
+          }
         ]
       },
       "bonus": {
@@ -3408,6 +3451,10 @@
           "firstScorer": "Rogers"
         },
         "GW9": {
+          "firstTeam": "Liverpool",
+          "firstScorer": "Isak"
+        },
+        "GW11": {
           "firstTeam": "Liverpool",
           "firstScorer": "Isak"
         }
