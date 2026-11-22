@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-22 18:13 UTC",
+  "lastUpdated": "2026-11-22 23:43 UTC",
   "rounds": [
     {
       "id": "GW1",
@@ -970,9 +970,9 @@
         {
           "home": "Liverpool",
           "away": "Man United",
-          "hg": null,
-          "ag": null,
-          "played": false,
+          "hg": 4,
+          "ag": 0,
+          "played": true,
           "kickoff": "2026-11-22T16:30:00Z"
         },
         {
