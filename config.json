@@ -191,8 +191,16 @@
       "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQACsAIkMUfmgOYMJ0gn0CI-ITUQ9kUqXzXrGbZAH5DdtwXXKIYQ19PI-n57fHLxJaUmliZ0_-UpwBJ/pub?output=csv",
       "featured": "Liverpool v Man United",
       "featuredResult": {
-        "firstTeam": "",
-        "firstScorer": ""
+        "firstTeam": "Liverpool",
+        "firstScorer": "Dominik Szoboszlai"
+      },
+      "results": {
+        "Hull City v Brighton Hove": "2-0"
+      },
+      "void": {
+        "Nature Boy": [
+          "Man City v Fulham"
+        ]
       }
     }
   ]
