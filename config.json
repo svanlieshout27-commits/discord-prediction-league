@@ -202,6 +202,17 @@
           "Man City v Fulham"
         ]
       }
+    },
+    {
+      "id": "GW12",
+      "label": "Gameweek 12",
+      "matchday": 12,
+      "csvUrl": "PASTE_YOUR_GW12_CSV_LINK_HERE",
+      "featured": "Arsenal v Man City",
+      "featuredResult": {
+        "firstTeam": "",
+        "firstScorer": ""
+      }
     }
   ]
 }
