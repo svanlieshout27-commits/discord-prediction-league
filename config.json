@@ -207,7 +207,7 @@
       "id": "GW12",
       "label": "Gameweek 12",
       "matchday": 12,
-      "csvUrl": "PASTE_YOUR_GW12_CSV_LINK_HERE",
+      "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSIc1_e33TkbvBeg04rOebRT_FeR5GjuBNpU5ROaXdw2EknQjZzeuza28g_xPb0yLbkHzU03yBMH8x9/pub?output=csv",
       "featured": "Arsenal v Man City",
       "featuredResult": {
         "firstTeam": "",
